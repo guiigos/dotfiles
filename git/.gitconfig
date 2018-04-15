@@ -1,0 +1,49 @@
+[user]
+  name = Guilherme Alves
+  email = guiigos.alves@gmail.com
+
+[credential]
+  helper = osxkeychain
+
+[alias]
+  # Create an empty Git repository or reinitialize an existing one
+  i = init
+
+  # Show the working tree status
+  s = status
+
+  # Clone a repository into a new directory
+  c = clone --recursive
+
+  # Add file contents to the index
+  a = add --all
+
+  # Show commit logs
+  l = log --pretty=short --decorate=full --max-count 10 --graph --abbrev-commit
+
+  # Show verbose output about tags
+  t = tag --list
+
+  # Show verbose output about branches
+  b = branch --all
+
+  # Show verbose output about remotes
+  r = remote --verbose
+
+  # Resetting all changes
+  rs = git checkout -- .
+
+  # Update remote refs along with associated object
+  ps = push origin master
+
+  # Fetch from and integrate with another repository or a local branch
+  pl = pull --rebase
+
+  # Summarize git log output contributors with number of commits
+  contributors = shortlog --summary --numbered
+
+[url "https://github.com/"] # git clone gh:user/repository.git
+  insteadOf = gh:
+
+[url "https://gitlab.com/"] # git clone ls:group/repository.git
+  insteadOf = gl:
