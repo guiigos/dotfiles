@@ -71,23 +71,33 @@ function git_prompt() {
 
       # Check for untracked files
       if [ -n "$(git ls-files --others --exclude-standard)" ]; then
-        s+='🔺';
+        s+='🔹';
       fi
 
       # Check for unstaged changes
       if ! $(git diff-files --quiet --ignore-submodules --); then
-        s+='❗';
+        s+='❓';
       fi
 
       # Check for uncommitted changes in the index
       if ! $(git diff --quiet --ignore-submodules --cached); then
-        s+='❓';
+        s+='❗';
       fi
 
       # Check for stashed files
       if $(git rev-parse --verify refs/stash &>/dev/null); then
         s+='💢';
       fi
+
+      # Verify commit pending push
+      if [[ `git diff --stat --cached origin/master` ]]; then
+        s+='🔺';
+      fi
+
+      # Verify pull pending
+      #if [[ `git fetch --dry-run` ]]; then
+      #  s+='🔻';
+      #fi
 
       b="$(git symbolic-ref --quiet --short HEAD 2> /dev/null || \
         git rev-parse --short HEAD 2> /dev/null || \
