@@ -65,6 +65,9 @@ installcask pgadmin4;
 installcask vox;
 installcask slack;
 installcask dropbox;
+installcask jadengeller-helium;
+installcask appcleaner;
+installcask spectacle;
 
 # Clean
 msg "Cache clean Brew";
