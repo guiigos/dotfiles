@@ -35,26 +35,26 @@ else
   msginstalled "node";
 fi
 
-installnpm "yo" yo true;
-installnpm "yo" generator-stack-node true;
-installnpm "gulp" gulp true;
-installnpm "cordova" cordova true;
-installnpm "ionic" ionic true;
-installnpm "ngrok" ngrok true;
-installnpm "nodemon" nodemon true;
-installnpm "http-server" http-server true;
-installnpm "pm2" pm2 true;
-installnpm "gitignore" gitignore true;
-installnpm "figlet" figlet-cli true;
-installnpm "mddir" mddir true;
-installnpm "sort-package-json" sort-package-json true;
-installnpm "notes" notes true;
-installnpm "npm-dview" npm-dview true;
-installnpm "now" now true;
-installnpm "ng" @angular/cli true;
-installnpm "bower" bower true true;
-installnpm "ios-sim" ios-sim true true;
-installnpm "ios-deploy" ios-deploy true true;
+installnpm "yo" yo true;                                # https://www.npmjs.com/package/yo
+installnpm "yo" generator-stack-node true;              # https://www.npmjs.com/package/generator-stack-node
+installnpm "gulp" gulp true;                            # https://www.npmjs.com/package/gulp
+installnpm "cordova" cordova true;                      # https://www.npmjs.com/package/cordova
+installnpm "ionic" ionic true;                          # https://www.npmjs.com/package/ionic
+installnpm "ngrok" ngrok true;                          # https://www.npmjs.com/package/ngrok
+installnpm "nodemon" nodemon true;                      # https://www.npmjs.com/package/nodemon
+installnpm "http-server" http-server true;              # https://www.npmjs.com/package/http-server
+installnpm "pm2" pm2 true;                              # https://www.npmjs.com/package/pm2
+installnpm "gitignore" gitignore true;                  # https://www.npmjs.com/package/gitignore
+installnpm "figlet" figlet-cli true;                    # https://www.npmjs.com/package/figlet-cli
+installnpm "mddir" mddir true;                          # https://www.npmjs.com/package/mddir
+installnpm "sort-package-json" sort-package-json true;  # https://www.npmjs.com/package/sort-package-json
+installnpm "notes" notes true;                          # https://www.npmjs.com/package/notes
+installnpm "npm-dview" npm-dview true;                  # https://www.npmjs.com/package/npm-dview
+installnpm "now" now true;                              # https://www.npmjs.com/package/now
+installnpm "ng" @angular/cli true;                      # https://www.npmjs.com/package/@angular/cli
+installnpm "bower" bower true true;                     # https://www.npmjs.com/package/bower
+installnpm "ios-sim" ios-sim true true;                 # https://www.npmjs.com/package/ios-sim
+installnpm "ios-deploy" ios-deploy true true;           # https://www.npmjs.com/package/ios-deploy
 
 # Clean
 msg "Cache clean NPM";

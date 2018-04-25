@@ -43,24 +43,24 @@ else
   msginstalled "caskroom";
 fi
 
-# HomeBrew
-installbrew git true;
-installbrew yarn true;
-installbrew node true;
-installbrew openssl true;
-installbrew mongodb true;
-installbrew heroku true;
-installbrew ttygif true;
-installbrew postgres true;
+# HomeBrew https://docs.brew.sh/Manpage.html
+installbrew git true;         # https://git-scm.com/doc
+installbrew yarn true;        # https://yarnpkg.com/en/docs/cli/
+installbrew node true;        # https://docs.npmjs.com/
+installbrew openssl true;     # https://www.openssl.org/docs/
+installbrew mongodb true;     # https://docs.mongodb.com/getting-started/shell/client/
+installbrew heroku true;      # https://devcenter.heroku.com/articles/heroku-cli-commands
+installbrew ttygif true;      # https://github.com/icholy/ttygif
+installbrew postgres true;    # http://postgresguide.com/utilities/psql.html
 
-# CaskRoom
+# CaskRoom https://gillesfabio.github.io/homebrew-cask-homepage
 installcask google-chrome;
 installcask google-backup-and-sync;
 installcask insomnia;
 installcask gifcapture;
 installcask sublime-text;
 installcask visual-studio-code;
-installcask android-studio;
+installcask android-studio;   # https://developer.android.com/studio/command-line/adb.html
 installcask pgadmin4;
 installcask vox;
 installcask slack;

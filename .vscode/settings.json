@@ -1,21 +1,30 @@
 {
-    "vsicons.associations.files": [
-        {
-            "icon": "shell",
-            "extensions": [
-                ".bash_functions",
-                ".bash_aliases",
-                ".bash_profile",
-                ".bash_prompt"
-            ],
-            "filename": true,
-            "format": "svg"
-        }
-    ],
-    "files.associations": {
-        "*.bash_functions": "shellscript",
-        "*.bash_aliases": "shellscript",
-        "*.bash_profile": "shellscript",
-        "*.bash_prompt": "shellscript"
+  "vsicons.associations.files": [
+    {
+      "icon": "shell",
+      "extensions": [
+        ".bash_functions",
+        ".bash_aliases",
+        ".bash_profile",
+        ".bash_prompt"
+      ],
+      "filename": true,
+      "format": "svg"
+    },
+    {
+      "icon": "html",
+      "extensions": [
+        ".sublime-snippet"
+      ],
+      "filename": true,
+      "format": "svg"
     }
+  ],
+  "files.associations": {
+    "*.bash_functions": "shellscript",
+    "*.bash_aliases": "shellscript",
+    "*.bash_profile": "shellscript",
+    "*.bash_prompt": "shellscript",
+    "*.sublime-snippet": "html"
+  }
 }

@@ -1,0 +1,22 @@
+<snippet>
+  <content>
+    <![CDATA[
+# ${1:Project Name}
+
+> TODO: Write description
+
+## Installation
+
+TODO: Describe the installation process
+
+## Usage
+
+TODO: Describe the usage process
+
+## License
+
+TODO: Describe the license
+]]>
+  </content>
+  <tabTrigger>readme</tabTrigger>
+</snippet>

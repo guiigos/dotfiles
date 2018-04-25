@@ -39,6 +39,9 @@
   # Fetch from and integrate with another repository or a local branch
   pl = pull --rebase
 
+  # Reset 1 commit
+  rsc = git reset HEAD~1
+
   # Summarize git log output contributors with number of commits
   contributors = shortlog --summary --numbered
 
