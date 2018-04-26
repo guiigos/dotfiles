@@ -8,12 +8,12 @@ This repository contains basic configurations and installation preferences that 
 
 ## Elements
 #### Installation
-- [Installing](install/README.md)
+- [Installing](install/)
 
 #### Preferences
-- [Git](git/README.md)
-- [Shell](shell/README.md)
-- [Sublime](sublime/README.md)
+- [Git](git/)
+- [Shell](shell/)
+- [Sublime](sublime/)
 
 ## License
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](./LICENSE)
