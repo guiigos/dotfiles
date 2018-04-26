@@ -11,7 +11,7 @@ These files are scripts that run when bash is invoked and contain preferences an
 - [.bash_prompt](.bash_prompt) - Responsible for customizing the promp.
 
 ## Usage
-Files must be inserted into the asa `~/` to work.
+The files must be inserted in the ~ / directory to work.
 
 ## License
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](./LICENSE)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](../LICENSE)
