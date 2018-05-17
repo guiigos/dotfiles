@@ -7,6 +7,7 @@ These files are scripts that run when bash is invoked and contain preferences an
 ## Elements
 - [.bash_profile](.bash_profile) - Contains custom data and loads the other files.
 - [.bash_aliases](.bash_aliases) - File with shortcuts and custom commands.
+- [.bash_backup](.bash_backup) - Backup of git repositories.
 - [.bash_functions](.bash_functions) - File that contains functions.
 - [.bash_prompt](.bash_prompt) - Responsible for customizing the promp.
 
