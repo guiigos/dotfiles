@@ -11,16 +11,16 @@ default="\033[0m";
 function create {
   if [ -d "$1" ]; then
     if $2 == true; then
-      echo -e "${yellow}==> $1 [existe]${default}"
+      echo "${yellow}==> $1 [existe]${default}"
     else
-      echo -e "${yellow}=> $1 [existe]${default}"
+      echo "${yellow}=> $1 [existe]${default}"
     fi
   else
     mkdir "$1"
     if $2 == true; then
-      echo -e "${green}==> $1 ✔${default}"
+      echo "${green}==> $1 ✔${default}"
     else
-      echo -e "${green}=> $1 ✔${default}"
+      echo "${green}=> $1 ✔${default}"
     fi
   fi
   cd $1
@@ -30,14 +30,14 @@ function create {
 function gh {
   if [ "$#" -eq "1" ]; then
     if [ -d "$1" ]; then
-      echo -e "${yellow}==> $1 [existe]${default}"
+      echo "${yellow}==> $1 [existe]${default}"
       cd $1
       tput init
       git checkout -- .
       git pull
       cd ..
     else
-      echo -e "${green}==> $1 ✔${default}\n"
+      echo "${green}==> $1 ✔${default}\n"
       tput init
       git clone https://github.com/guiigos/$1.git
     fi
@@ -52,14 +52,14 @@ function gh {
 function gl {
   if [ "$#" -eq "2" ]; then
     if [ -d "$2" ]; then
-      echo -e "${yellow}===> $2 [existe]${default}"
+      echo "${yellow}===> $2 [existe]${default}"
       cd $2
       tput init
       git checkout -- .
       git pull
       cd ..
     else
-      echo -e "${green}===> $2 ✔${default}\n"
+      echo "${green}===> $2 ✔${default}\n"
       tput init
       git clone https://gitlab.com/$1/$2.git
     fi
@@ -73,14 +73,14 @@ function gl {
 function hr {
   if [ "$#" -eq "1" ]; then
     if [ -d "$1" ]; then
-      echo -e "${yellow}==> $1 [existe]${default}"
+      echo "${yellow}==> $1 [existe]${default}"
       cd $1
       tput init
       git checkout -- .
       git pull
       cd ..
     else
-      echo -e "${green}==> $1 ✔${default}\n"
+      echo "${green}==> $1 ✔${default}\n"
       tput init
       git clone https://git.heroku.com/$1.git
     fi
@@ -112,18 +112,18 @@ function heroku {
   cd ..
 }
 function ini {
-  echo -e "${blue}____________________________________${default}\n"
+  echo "${blue}____________________________________${default}\n"
   echo "Backup repositórios GIT"
-  echo -e "${blue}____________________________________${default}\n"
-  echo -e "   ${red}[0]${default} - GitHub"
-  echo -e "   ${red}[1]${default} - GitLab"
-  echo -e "   ${red}[2]${default} - Heroku"
+  echo "${blue}____________________________________${default}\n"
+  echo "   ${red}[0]${default} - GitHub"
+  echo "   ${red}[1]${default} - GitLab"
+  echo "   ${red}[2]${default} - Heroku"
   echo
-  echo -e "   ${red}[3]${default} - Todos"
-  echo -e "   ${red}[4]${default} - Sair"
-  echo -e "${blue}____________________________________${default}\n"
+  echo "   ${red}[3]${default} - Todos"
+  echo "   ${red}[4]${default} - Sair"
+  echo "${blue}____________________________________${default}\n"
   read -n1 -r -p "Informe o valor: " key;
-  echo -e "\n"
+  echo "\n"
 
   if [ "${key}" -eq "0" ]; then
     github
@@ -146,7 +146,7 @@ function ini {
 clear
 ini
 read -n1 -r -p "Precione uma tecla para sair..."
-echo -e "\nEncerrado..."
+echo "\nEncerrado..."
 tput init
 sleep 1s
 clear
