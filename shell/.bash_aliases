@@ -61,6 +61,9 @@ alias week="date +%V"
 # Database
 alias db="source runpsql.sh"
 
+# Backup
+alias backup="sh .bash_backup"
+
 # Programs
 alias subl=sublime
 

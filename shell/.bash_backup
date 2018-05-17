@@ -1,0 +1,152 @@
+#!/bin/bash
+
+red="\033[1;31m";
+blue="\033[1;34m";
+green="\033[1;32m";
+yellow="\033[1;33m";
+default="\033[0m";
+
+# $1 - pasta
+# $2 - subpasta
+function create {
+  if [ -d "$1" ]; then
+    if $2 == true; then
+      echo -e "${yellow}==> $1 [existe]${default}"
+    else
+      echo -e "${yellow}=> $1 [existe]${default}"
+    fi
+  else
+    mkdir "$1"
+    if $2 == true; then
+      echo -e "${green}==> $1 ✔${default}"
+    else
+      echo -e "${green}=> $1 ✔${default}"
+    fi
+  fi
+  cd $1
+}
+
+# $1 - respositorio
+function gh {
+  if [ "$#" -eq "1" ]; then
+    if [ -d "$1" ]; then
+      echo -e "${yellow}==> $1 [existe]${default}"
+      cd $1
+      tput init
+      git checkout -- .
+      git pull
+      cd ..
+    else
+      echo -e "${green}==> $1 ✔${default}\n"
+      tput init
+      git clone https://github.com/guiigos/$1.git
+    fi
+  else
+    echo "${red}✖ Parâmetros ($#/1) ✖${default}"
+  fi
+  echo ""
+}
+
+# $1 - grupo
+# $2 - respositorio
+function gl {
+  if [ "$#" -eq "2" ]; then
+    if [ -d "$2" ]; then
+      echo -e "${yellow}===> $2 [existe]${default}"
+      cd $2
+      tput init
+      git checkout -- .
+      git pull
+      cd ..
+    else
+      echo -e "${green}===> $2 ✔${default}\n"
+      tput init
+      git clone https://gitlab.com/$1/$2.git
+    fi
+  else
+    echo "${red}✖ Parâmetros ($#/2) ✖${default}"
+  fi
+  echo ""
+}
+
+# $1 - respositorio
+function hr {
+  if [ "$#" -eq "1" ]; then
+    if [ -d "$1" ]; then
+      echo -e "${yellow}==> $1 [existe]${default}"
+      cd $1
+      tput init
+      git checkout -- .
+      git pull
+      cd ..
+    else
+      echo -e "${green}==> $1 ✔${default}\n"
+      tput init
+      git clone https://git.heroku.com/$1.git
+    fi
+  else
+    echo "${red}✖ Parâmetros ($#/1) ✖${default}"
+  fi
+  echo ""
+}
+
+function github {
+  create "GitHub" false
+  gh "repositorio"
+  cd ..
+}
+function gitlab {
+  create "GitLab" false
+  create "grupo" true
+  gl "grupo" "repositorio"
+  cd ..
+
+  create "grupo" true
+  gl "grupo" "repositorio"
+  cd ..
+  cd ..
+}
+function heroku {
+  create "Heroku" false
+  hr "repositorio"
+  cd ..
+}
+function ini {
+  echo -e "${blue}____________________________________${default}\n"
+  echo "Backup repositórios GIT"
+  echo -e "${blue}____________________________________${default}\n"
+  echo -e "   ${red}[0]${default} - GitHub"
+  echo -e "   ${red}[1]${default} - GitLab"
+  echo -e "   ${red}[2]${default} - Heroku"
+  echo
+  echo -e "   ${red}[3]${default} - Todos"
+  echo -e "   ${red}[4]${default} - Sair"
+  echo -e "${blue}____________________________________${default}\n"
+  read -n1 -r -p "Informe o valor: " key;
+  echo -e "\n"
+
+  if [ "${key}" -eq "0" ]; then
+    github
+  elif [ "${key}" -eq "1" ]; then
+    gitlab
+  elif [ "${key}" -eq "2" ]; then
+    heroku
+  elif [ "${key}" -eq "3" ]; then
+    github
+    gitlab
+    heroku
+  elif [ "${key}" -eq "4" ]; then
+    clear
+  else
+    clear
+    ini
+  fi
+}
+
+clear
+ini
+read -n1 -r -p "Precione uma tecla para sair..."
+echo -e "\nEncerrado..."
+tput init
+sleep 1s
+clear

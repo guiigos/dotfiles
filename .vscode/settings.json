@@ -5,6 +5,7 @@
       "extensions": [
         ".bash_functions",
         ".bash_aliases",
+        ".bash_backup",
         ".bash_profile",
         ".bash_prompt"
       ],
@@ -23,6 +24,7 @@
   "files.associations": {
     "*.bash_functions": "shellscript",
     "*.bash_aliases": "shellscript",
+    "*.bash_backup": "shellscript",
     "*.bash_profile": "shellscript",
     "*.bash_prompt": "shellscript",
     "*.sublime-snippet": "html"
