@@ -29,6 +29,7 @@ alias bash_prompt="subl ~/.bash_prompt"
 alias bash_profile="subl ~/.bash_profile"
 alias bash_aliases="subl ~/.bash_aliases"
 alias bash_functions="subl ~/.bash_functions"
+alias bash_backup="subl ~/.bash_backup"
 
 # Secret folder
 alias showprivate="mv private .private"
@@ -62,7 +63,7 @@ alias week="date +%V"
 alias db="source runpsql.sh"
 
 # Backup
-alias backup="sh .bash_backup"
+alias backup="sh ~/.bash_backup"
 
 # Programs
 alias subl=sublime
