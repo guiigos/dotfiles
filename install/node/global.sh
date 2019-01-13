@@ -54,6 +54,7 @@ installnpm "notes" notes true false;                          # https://www.npmj
 installnpm "npm-dview" npm-dview true false;                  # https://www.npmjs.com/package/npm-dview
 installnpm "now" now true false;                              # https://www.npmjs.com/package/now
 installnpm "ng" @angular/cli true false;                      # https://www.npmjs.com/package/@angular/cli
+installnpm "nest" @nestjs/cli true false;                     # https://github.com/nestjs/nest-cli
 installnpm "bower" bower true true;                           # https://www.npmjs.com/package/bower
 installnpm "nodemon" nodemon true true;                       # https://www.npmjs.com/package/nodemon
 installnpm "pm2" pm2 true true;                               # https://www.npmjs.com/package/pm2
