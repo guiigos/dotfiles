@@ -10,7 +10,7 @@ In this repository there are some examples of text fragments that can be quickly
 - [Reset CSS](snippet-resetcss.sublime-snippet) [**yahoo-css-reset-yui-3**](http://cssreset.com/scripts/yahoo-css-reset-yui-3) - (`resetcss + tab`) Snippet used to create Reset CSS.
 
 ## Usage
-On Mac, user created snippets are saved at `~/Library/Application Support/Sublime Text 3/Packages/User`.
+First intall [Package Control](https://packagecontrol.io/). On Mac, user created snippets are saved at `~/Library/Application Support/Sublime Text 3/Packages/User`.
 
 ## License
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](../LICENSE)
