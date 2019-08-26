@@ -47,6 +47,7 @@ fi
 installbrew git true;         # https://git-scm.com/doc
 installbrew yarn true;        # https://yarnpkg.com/en/docs/cli/
 installbrew node true;        # https://docs.npmjs.com/
+installbrew nvm true;         # https://github.com/nvm-sh/nvm
 installbrew openssl true;     # https://www.openssl.org/docs/
 installbrew mongodb true;     # https://docs.mongodb.com/getting-started/shell/client/
 installbrew heroku true;      # https://devcenter.heroku.com/articles/heroku-cli-commands

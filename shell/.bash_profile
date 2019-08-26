@@ -28,8 +28,16 @@ export PATH=$PATH:/Library/PostgreSQL/9.6/scripts/
 # Visual Studio Code
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin/"
 
+# Flutter
+export PATH="$PATH:$HOME/Library/Flutter/bin/"
+
 # Sublime Text
 export PATH="$PATH:/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl/"
+
+# Nvm
+export NVM_DIR="$HOME/.nvm"
+  [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+  [ -s "/usr/local/opt/nvm/etc/bash_completion" ] && . "/usr/local/opt/nvm/etc/bash_completion"  # This loads nvm bash_completion
 
 # ————————————————————————
 # FILES
