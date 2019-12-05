@@ -92,29 +92,63 @@ function hr {
 
 function github {
   create "GitHub" false
-  gh "repositorio"
+  gh "android-helpers"
+  gh "design-patterns"
+  gh "dotfiles"
+  gh "generator-stack-node"
+  gh "guiigos.github.io"
+  gh "ionic-storage"
+  gh "ionic-http"
+  gh "ionic-sqlite"
+  gh "metodos-uteis"
+  gh "node-cli"
+  gh "node-token"
+  gh "node-upload"
+  gh "stack-node-dependency"
   cd ..
 }
 function gitlab {
   create "GitLab" false
-  create "grupo" true
-  gl "grupo" "repositorio"
+  create "guia-festa" true
+  gl "guia-festa" "guia-festa"
   cd ..
 
-  create "grupo" true
-  gl "grupo" "repositorio"
+  create "guia-localizar" true
+  gl "guia-localizar" "guia-localizar"
+  gl "guia-localizar" "guia-localizar-api"
+  gl "guia-localizar" "guia-localizar-api-babel"
+  gl "guia-localizar" "guia-localizar-backup"
+  gl "guia-localizar" "guia-localizar-electron"
+  cd ..
+
+  create "guiigos-documents" true
+  gl "guiigos-documents" "awesome"
+  gl "guiigos-documents" "useful-code"
+  cd ..
+
+  create "guiigos-projects" true
+  gl "guiigos-projects" "ionic-utilities"
+  gl "guiigos-projects" "manager-password"
+  gl "guiigos-projects" "manager-password-forms"
+  gl "guiigos-projects" "manager-password-generator"
   cd ..
   cd ..
 }
 function heroku {
   create "Heroku" false
-  hr "repositorio"
+  hr "guia-localizar"
+  hr "guia-localizar-sistema"
+  hr "guia-localizar-theme"
+  hr "guiigos-awesome"
+  hr "guiigos-ionic"
+  hr "guiigos-manager"
+  hr "guiigos-ferias"
   cd ..
 }
 function ini {
-  echo "${blue}____________________________________${default}\n"
+  printf "${blue}____________________________________${default}\n"
   echo "Backup repositórios GIT"
-  echo "${blue}____________________________________${default}\n"
+  printf "${blue}____________________________________${default}\n"
   echo "   ${red}[0]${default} - GitHub"
   echo "   ${red}[1]${default} - GitLab"
   echo "   ${red}[2]${default} - Heroku"

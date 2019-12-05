@@ -7,7 +7,8 @@
         ".bash_aliases",
         ".bash_backup",
         ".bash_profile",
-        ".bash_prompt"
+        ".bash_prompt",
+        ".hushlogin"
       ],
       "filename": true,
       "format": "svg"

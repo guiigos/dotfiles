@@ -15,6 +15,13 @@ function mkd() {
   fi
 }
 
+# Compare files in VSCode
+# $1 - File
+# $2 - Compare
+function diff() {
+	code --diff $1 $2
+}
+
 # Clone repository GitHub
 # $1 - Repository name
 function gh() {

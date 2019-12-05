@@ -4,6 +4,9 @@
 # ALIAS
 # ————————————————————————
 
+# Backup
+alias backup="sh ~/.bash_backup"
+
 # Folder GitHub, GitLab
 alias github="cd $HOME/Documents/Sistemas/GitHub/"
 alias gitlab="cd $HOME/Documents/Sistemas/GitLab/"
@@ -31,10 +34,8 @@ alias bash_aliases="subl ~/.bash_aliases"
 alias bash_functions="subl ~/.bash_functions"
 alias bash_backup="subl ~/.bash_backup"
 
-# Secret folder
-alias showprivate="mv private .private"
-alias hideprivate="mv .private private"
-alias private="open ~/.private"
+# Get week number
+alias week="date +%V"
 
 # Navigation
 alias -- -="cd -"             # -
@@ -45,31 +46,34 @@ alias ..="cd .."              # ..
 alias ...="cd ../.."          # ...
 alias ....="cd ../../.."      # ....
 alias .....="cd ../../../.."  # .....
-alias ls="command ls -G"      # ls
-alias ld="command ls -lF -G"  # ld
-alias la="command ls -laF -G" # la
+
+# Diretório
+alias dir="pwd"               # listar diretório atual
+
+# List
+alias ls="command ls -G"      # subscreve a listagem pela listagem por cores
+alias ld="command ls -lFG"    # listagem detalhada ou ls -l -F -G
+alias lo="command ls -laFG"   # listagem detalhada incluindo arquivos ocultos
 
 # Historic
 alias h=history
-alias clr=clear
-alias clrfull="history -c; history -w; rm ~/.bash_history"
-alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
-alias cleanupls="/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user && killall Finder" # Clean LaunchServices
+alias cl=clear
+alias ch="history -c; history -w; rm ~/.bash_history"
+alias cf="defaults delete com.apple.finder GoToField; defaults delete com.apple.finder GoToFieldHistory"
 
-# Get week number
-alias week="date +%V"
+# NPM
+alias npm_clear="npm cache clean --force" # Limpar cache
+alias npm_install="npm install --only=production" # Instalar pacotes ignorando devdependences
+alias npm_list="npm ls --depth=0" # Listar pacotes (Informgar -g para global)
+alias npm_update="npm update" # Update dos pacotes (Informgar -g para global)
+alias npm_outdated="npm outdated" # Listar pacotes desatualizados (Informgar -g para global)
 
-# Database
-alias db="source runpsql.sh"
-
-# Backup
-alias backup="sh ~/.bash_backup"
-
-# Programs
-alias subl=sublime
+# Remove files
+alias dsstore="find . -type f -name '*.DS_Store' -ls -delete"
 
 # Update basic
-alias update="sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; npm update -g"
+alias update_software="sudo softwareupdate -i -a" # update softwares
+alias update_brew="brew update; brew upgrade; brew cleanup" # update brew
 
 # IOs
-alias ios="open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app/"
+alias ios="open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app/" # Open IOs emulator
