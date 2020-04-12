@@ -43,6 +43,9 @@ else
   msginstalled "caskroom";
 fi
 
+# https://devcenter.heroku.com/articles/heroku-cli
+brew tap heroku/brew && brew install heroku;
+
 # HomeBrew https://docs.brew.sh/Manpage.html
 installbrew node true;            # https://docs.npmjs.com/
 installbrew nvm true;             # https://github.com/nvm-sh/nvm
