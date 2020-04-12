@@ -69,6 +69,7 @@ installcask vox;
 installcask vlc;
 installcask appcleaner;
 installcask spectacle;
+installcask docker;
 
 # Clean
 msg "Cache clean Brew";
