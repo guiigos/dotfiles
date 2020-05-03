@@ -53,6 +53,7 @@ installnpm "cordova" cordova true false;                      # https://www.npmj
 installnpm "ionic" ionic true false;                          # https://www.npmjs.com/package/ionic
 installnpm "typescript" typescript true false;                # https://www.npmjs.com/package/typescript
 installnpm "create-react-app" create-react-app true false;    # https://www.npmjs.com/package/create-react-app
+installnpm "react-native-cli" react-native-cli true false;    # https://www.npmjs.com/package/react-native-cli
 installnpm "yo" yo true false;                                # https://www.npmjs.com/package/yo
 installnpm "figlet" figlet-cli true false;                    # https://www.npmjs.com/package/figlet-cli
 installnpm "ngrok" ngrok true false;                          # https://www.npmjs.com/package/ngrok
