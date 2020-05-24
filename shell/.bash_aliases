@@ -52,12 +52,12 @@ alias dir="pwd"               # listar diretório atual
 
 # List
 alias ls="command ls -G"      # subscreve a listagem pela listagem por cores
-alias ld="command ls -lFG"    # listagem detalhada ou ls -l -F -G
-alias lo="command ls -laFG"   # listagem detalhada incluindo arquivos ocultos
+alias ll="command ls -lFG"    # listagem detalhada ou ls -l -F -G
+alias la="command ls -laFG"   # listagem detalhada incluindo arquivos ocultos
 
 # Historic
 alias h=history
-alias cl=clear
+alias clr=clear
 alias ch="history -c; history -w; rm ~/.bash_history"
 alias cf="defaults delete com.apple.finder GoToField; defaults delete com.apple.finder GoToFieldHistory"
 
