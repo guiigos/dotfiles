@@ -1,5 +1,5 @@
 # DotFiles
-> Personal DotFiles used on MacOS
+> Personal DotFiles used on MacOS.
 
 ## Overview
 This repository contains basic configurations and installation preferences that meet the needs of my work environment.
