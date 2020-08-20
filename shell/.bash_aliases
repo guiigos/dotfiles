@@ -64,7 +64,7 @@ alias cf="defaults delete com.apple.finder GoToField; defaults delete com.apple.
 # NPM
 alias npm_clear="npm cache clean --force" # Limpar cache
 alias npm_install="npm install --only=production" # Instalar pacotes ignorando devdependences
-alias npm_list="npm ls --depth=0" # Listar pacotes (Informgar -g para global)
+alias npm_list="npm ls -g --depth=0" # Listar pacotes (Informgar -g para global)
 alias npm_update="npm update" # Update dos pacotes (Informgar -g para global)
 alias npm_outdated="npm outdated" # Listar pacotes desatualizados (Informgar -g para global)
 
