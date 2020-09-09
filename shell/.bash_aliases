@@ -4,40 +4,40 @@
 # ALIAS
 # ————————————————————————
 
-# Backup
+# edit config
+alias editGitConfig="subl ~/.gitconfig"
+alias editBashPrompt="subl ~/.bash_prompt"
+alias editBashProfile="subl ~/.bash_profile"
+alias editBashAliases="subl ~/.bash_aliases"
+alias editBashFunctions="subl ~/.bash_functions"
+alias editBashBackup="subl ~/.bash_backup"
+
+# backup
 alias backup="sh ~/.bash_backup"
 
-# Folder GitHub, GitLab
+# local repository
 alias github="cd $HOME/Documents/Sistemas/GitHub/"
 alias gitlab="cd $HOME/Documents/Sistemas/GitLab/"
 
-# Icons desktop
-alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
-alias hidedesktop="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
-
-# Files system
-alias show="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
-alias hide="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
-
-# Disable and enable spotlight
+# disable and enable spotlight
 alias spotoff="sudo mdutil -a -i off"
 alias spoton="sudo mdutil -a -i on"
 
-# Lock screen
+# icons desktop
+alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
+alias hideDesktop="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
+
+# files system
+alias showSystem="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
+alias hideSystem="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
+
+# lock screen
 alias lock="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
 
-# Files config
-alias gitconfig="subl ~/.gitconfig"
-alias bash_prompt="subl ~/.bash_prompt"
-alias bash_profile="subl ~/.bash_profile"
-alias bash_aliases="subl ~/.bash_aliases"
-alias bash_functions="subl ~/.bash_functions"
-alias bash_backup="subl ~/.bash_backup"
-
-# Get week number
+# get week number
 alias week="date +%V"
 
-# Navigation
+# navigation
 alias -- -="cd -"             # -
 alias ~="cd ~"                # ~
 alias cs="cd ..;ls;"          # cs
@@ -47,33 +47,26 @@ alias ...="cd ../.."          # ...
 alias ....="cd ../../.."      # ....
 alias .....="cd ../../../.."  # .....
 
-# Diretório
-alias dir="pwd"               # listar diretório atual
+# directory
+alias dir="pwd"               # list current directory
 
-# List
-alias ls="command ls -G"      # subscreve a listagem pela listagem por cores
-alias ll="command ls -lFG"    # listagem detalhada ou ls -l -F -G
-alias la="command ls -laFG"   # listagem detalhada incluindo arquivos ocultos
+# list
+alias ls="command ls -G"      # subscribe to the list by color list
+alias ll="command ls -lFG"    # detailed listing or ls -l -F -G
+alias la="command ls -laFG"   # detailed listing including hidden files
 
-# Historic
+# historic
 alias h=history
 alias clr=clear
 alias ch="history -c; history -w; rm ~/.bash_history"
 alias cf="defaults delete com.apple.finder GoToField; defaults delete com.apple.finder GoToFieldHistory"
 
-# NPM
-alias npm_clear="npm cache clean --force" # Limpar cache
-alias npm_install="npm install --only=production" # Instalar pacotes ignorando devdependences
-alias npm_list="npm ls -g --depth=0" # Listar pacotes (Informgar -g para global)
-alias npm_update="npm update" # Update dos pacotes (Informgar -g para global)
-alias npm_outdated="npm outdated" # Listar pacotes desatualizados (Informgar -g para global)
-
-# Remove files
+# remove files
 alias dsstore="find . -type f -name '*.DS_Store' -ls -delete"
 
-# Update basic
-alias update_software="sudo softwareupdate -i -a" # update softwares
-alias update_brew="brew update; brew upgrade; brew cleanup" # update brew
+# basic update
+alias updateSoftware="sudo softwareupdate -i -a" # update softwares
+alias updateBrew="brew update; brew upgrade; brew cleanup" # update brew
 
-# IOs
-alias ios="open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app/" # Open IOs emulator
+# ios
+alias ios="open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app/" # open IOs emulator

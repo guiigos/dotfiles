@@ -1,19 +1,20 @@
 # DotFiles
-> Personal DotFiles used on MacOS.
+![Project](https://img.shields.io/badge/guiigos-dotfiles-ff69b4?style=flat-square)
+![Languages](https://img.shields.io/github/languages/top/guiigos/dotfiles?style=flat-square)
 
 ## Overview
-This repository contains basic configurations and installation preferences that meet the needs of my work environment.
+Configuration files for the development environment and work environment used in **MacOs**. These configurations and programs assist in the productivity and agility of tasks, all of them were created with a view to particular needs, they may not be useful or they may not completely meet the needs of others.
 
-**Warning:** If you want to use my personal configuration files check the code and analyze if it is according to your needs. Do not run any file without being sure of the effects. Remembering that they are personal files, then use at your own risk.
+**Warning:** If you want to use the personal configuration files, check the code and check if it meets your needs. Do not run any files without being sure of the effects. Remembering that they are personal files, use at your own risk.
 
 ## Elements
 #### Installation
-- [Installing](install/)
+- [**Installing**](install/)
 
 #### Preferences
-- [Git](git/)
-- [Shell](shell/)
-- [Sublime](sublime/)
+- [**Git**](git/)
+- [**Shell**](shell/)
+- [**Sublime**](sublime/)
 
 ## License
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](./LICENSE)
+[![License: MIT](https://img.shields.io/github/license/guiigos/dotfiles?color=black&style=flat-square)](./LICENSE)

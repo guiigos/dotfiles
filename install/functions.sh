@@ -1,41 +1,41 @@
-# Colors
+# colors
 red="\033[1;31m";
 blue="\033[1;34m";
 green="\033[1;32m";
 yellow="\033[1;33m";
 default="\033[0m";
 
-# Already installed
+# already installed
 function msgcheck {
   echo "${green}=> $1 ✔${default}";
 }
 
-# Installing
+# installing
 function msginstall {
   echo "${yellow}==> $1 [installing]${default}";
 }
 
-# Installed
+# installed
 function msginstalled {
   echo "${green}==> $1 installed ✔${default}";
 }
 
-# Update
+# update
 function msgupdate {
   echo "${blue}==> $1 [updating]${default}";
 }
 
-# Updated
+# updated
 function msgupdated {
   echo "${blue}==> $1 updated ✔${default}";
 }
 
-# Error
+# error
 function msgerror {
   echo "${red}✖ $1 ✖${default}";
 }
 
-# Message
+# message
 function msg {
   echo "${green} $1 ${default}";
 }

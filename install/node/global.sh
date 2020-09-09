@@ -29,32 +29,31 @@ function installnpm() {
   fi
 }
 
-# Install
+# install
 if which node &> /dev/null; then
-  msgcheck "node";
+  msgcheck "NodeJs";
 else
-  msginstall "node";
+  msginstall "NodeJs";
   npm install -g n;
   sudo n stable;
-  msginstalled "node";
+  msginstalled "NodeJs";
 fi
 
-# Create file autocomplete
+# create file autocomplete
 npm completion >> ~/.bashrc;
 
-# Dados default NPM INIT
+# defaults npm
 npm config set init.author.name "Guilherme Alves";
 npm config set init.author.email "guiigos.alves@gmail.com";
 npm config set save-prefix="~";
 
-# Globals
-installnpm "yo" yo true false;                                # https://www.npmjs.com/package/yo
+# globals
 installnpm "typescript" typescript true false;                # https://www.npmjs.com/package/typescript
 installnpm "create-next-app" create-next-app true false;      # https://www.npmjs.com/package/create-next-app
 installnpm "create-react-app" create-react-app true false;    # https://www.npmjs.com/package/create-react-app
 installnpm "react-native-cli" react-native-cli true false;    # https://www.npmjs.com/package/react-native-cli
-installnpm "ngrok" ngrok true false;                          # https://www.npmjs.com/package/ngrok
 installnpm "nodemon" nodemon true true;                       # https://www.npmjs.com/package/nodemon
+installnpm "ngrok" ngrok true false;                          # https://www.npmjs.com/package/ngrok
 installnpm "npm-dview" npm-dview true false;                  # https://www.npmjs.com/package/npm-dview
 installnpm "npm-check" npm-check true false;                  # https://www.npmjs.com/package/npm-check
 installnpm "http-server" http-server true false;              # https://www.npmjs.com/package/http-server
@@ -68,7 +67,7 @@ installnpm "workin-hard" workin-hard true false;              # https://www.npmj
 installnpm "sort-package-json" sort-package-json true false;  # https://www.npmjs.com/package/sort-package-json
 installnpm "pm2" pm2 true true;                               # https://www.npmjs.com/package/pm2
 
-# Clean
-msg "Cache clean NPM";
+# clean
+msg "NPM cache clean...";
 npm cache verify;
 npm cache clean --force;

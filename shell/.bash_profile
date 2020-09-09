@@ -1,40 +1,40 @@
 #!/usr/bin/env bash
 
-# Parar de exibir a mensagem do ZSH
+# stop displaying the ZSH message
 export BASH_SILENCE_DEPRECATION_WARNING=1
 
 # ————————————————————————
 # EXPORTS
 # ————————————————————————
 
-# Add `~/bin` to the `$PATH`
+# add `~/bin` to the `$PATH`
 export PATH="$HOME/bin:$PATH";
 
-# Visual Studio Code
+# visual studio code
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin/"
 
-# Sublime Text
+# sublime text
 export PATH="$PATH:/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl/"
 
-# Android ADB
+# android ADB
 export PATH=$PATH:$HOME/Library/Android/sdk/platform-tools/
 
-# Android zipalign, apksigner
+# android build tools
 export PATH=$PATH:$HOME/Library/Android/sdk/build-tools/25.0.2/
 
-# Android emulator
+# android emulator
 export PATH=$PATH:$HOME/Library/Android/sdk/emulator/
 
-# Android tools
+# android tools
 export PATH=$PATH:$HOME/Library/Android/sdk/tools/
 
-# Flutter
+# flutter
 export PATH=$PATH:$HOME/Library/Android/flutter/bin/
 
 # NVM
 export NVM_DIR="$HOME/.nvm"
-  [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-  [ -s "/usr/local/opt/nvm/etc/bash_completion" ] && . "/usr/local/opt/nvm/etc/bash_completion"  # This loads nvm bash_completion
+  [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # this loads nvm
+  [ -s "/usr/local/opt/nvm/etc/bash_completion" ] && . "/usr/local/opt/nvm/etc/bash_completion"  # this loads nvm bash_completion
 
 # ————————————————————————
 # FILES

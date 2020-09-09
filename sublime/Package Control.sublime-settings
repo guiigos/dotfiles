@@ -5,8 +5,8 @@
 	],
 	"installed_packages":
 	[
-		"ColorPicker",
 		"Git",
+		"ColorPicker",
 		"Material Theme",
 		"Package Control"
 	]

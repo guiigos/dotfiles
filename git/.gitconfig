@@ -6,43 +6,31 @@
   helper = osxkeychain
 
 [alias]
-  # Create an empty Git repository or reinitialize an existing one
+  # https://git-scm.com/docs/git-init
   i = init
 
-  # Show the working tree status
+  # https://git-scm.com/docs/git-status
   s = status
 
-  # Clone a repository into a new directory
+  # https://git-scm.com/docs/git-clone
   c = clone --recursive
 
-  # Add file contents to the index
+  # https://git-scm.com/docs/git-add
   a = add --all
 
-  # Show commit logs
-  l = log --pretty=short --decorate=full --max-count 10 --graph --abbrev-commit
+  # https://git-scm.com/docs/git-log
+  l = log -5 --oneline
 
-  # Show verbose output about tags
-  t = tag --list
-
-  # Show verbose output about branches
-  b = branch --all
-
-  # Show verbose output about remotes
-  r = remote --verbose
-
-  # Resetting all changes
-  rs = git checkout -- .
-
-  # Update remote refs along with associated object
+  # https://git-scm.com/docs/git-push
   ps = push origin master
 
-  # Fetch from and integrate with another repository or a local branch
+  # https://git-scm.com/docs/git-pull
   pl = pull --rebase
 
-  # Reset 1 commit
-  rsc = git reset HEAD~1
+  # https://git-scm.com/docs/git-reset
+  rsc = reset HEAD~1
 
-  # Summarize git log output contributors with number of commits
+  # https://git-scm.com/docs/git-shortlog
   contributors = shortlog --summary --numbered
 
 [url "https://github.com/"] # git clone gh:user/repository.git

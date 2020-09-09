@@ -6,43 +6,31 @@ sudo scutil --set ComputerName "${computername}"    # scutil --get ComputerName
 sudo scutil --set LocalHostName "${computername}"   # scutil --get LocalHostName
 sudo scutil --set HostName "${computername}"        # scutil --get HostName
 
-
-
-
 ## pmset
 ## https://ss64.com/osx/pmset.html
-############################################
 
-# List
+# list
 pmset −g
-
-
-
 
 ## systemsetup
 ## https://ss64.com/osx/systemsetup.html
-############################################
 
-# Set amount of idle time until computer sleeps. Specify "Never" or "Off" for never
+# set amount of idle time until computer sleeps. Specify "Never" or "Off" for never
 sudo systemsetup -setcomputersleep 15
 
-# Set amount of idle time until display sleeps. Specify "Never" or "Off" for never
+# set amount of idle time until display sleeps. Specify "Never" or "Off" for never
 sudo systemsetup -setdisplaysleep 10
 
-# Set amount of idle time until hard disk sleeps. Specify "Never" or "Off" for never
+# set amount of idle time until hard disk sleeps. Specify "Never" or "Off" for never
 sudo systemsetup -setharddisksleep 10
 
-# Specify whether the server should restart automatically after the system freezes
+# dpecify whether the server should restart automatically after the system freezes
 sudo systemsetup -setrestartfreeze on
-
-
-
 
 ## defaults
 ## https://ss64.com/osx/syntax-defaults.html
-############################################
 
-# List
+# list
 defaults read
 
 defaults write NSGlobalDomain AppleActionOnDoubleClick -string "Maximize"
@@ -151,5 +139,5 @@ defaults write com.apple.screencapture location -string "${HOME}/Desktop"
 
 defaults write com.apple.universalaccess reduceTransparency -bool true
 
-# Restart dock
+# restart dock
 killall Dock

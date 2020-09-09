@@ -4,48 +4,57 @@
 # GIT BRANCH IN PROMPT
 # ————————————————————————
 
-# Regular colours
-# \[\033[00;30m\] — Black
-# \[\033[00;31m\] — Red
-# \[\033[00;32m\] — Green
-# \[\033[00;33m\] — Yellow
-# \[\033[00;34m\] — Blue
-# \[\033[00;35m\] — Purple
-# \[\033[00;36m\] — Cyan
-# \[\033[00;37m\] — White
+function gitprompt() {
+  local s='';
+  local b='';
 
-# High intensity
-# \[\033[00;90m\] — Black
-# \[\033[00;91m\] — Red
-# \[\033[00;92m\] — Green
-# \[\033[00;93m\] — Yellow
-# \[\033[00;94m\] — Blue
-# \[\033[00;95m\] — Purple
-# \[\033[00;96m\] — Cyan
-# \[\033[00;97m\] — White
+  # check if the current directory is a repository
+  if [ $(git rev-parse --is-inside-work-tree &>/dev/null; echo "${?}") == '0' ]; then
 
-# Background
-# \[\033[40m\] — Black
-# \[\033[41m\] — Red
-# \[\033[42m\] — Green
-# \[\033[43m\] — Yellow
-# \[\033[44m\] — Blue
-# \[\033[45m\] — Purple
-# \[\033[46m\] — Cyan
-# \[\033[47m\] — White
+    # check if the current directory is not .git
+    if [ "$(git rev-parse --is-inside-git-dir 2>/dev/null)" == 'false' ]; then
 
-# Backgrounds with high intensity
-# \[\033[00;100m\] — Black
-# \[\033[00;101m\] — Red
-# \[\033[00;102m\] — Green
-# \[\033[00;103m\] — Yellow
-# \[\033[00;104m\] — Blue
-# \[\033[10;95m\] — Purple
-# \[\033[00;106m\] — Cyan
-# \[\033[00;107m\] — White
+      # ensure the index is up to date
+      git update-index --really-refresh -q &>/dev/null;
 
+      # check for untracked files
+      if [ -n "$(git ls-files --others --exclude-standard)" ]; then
+        s+='🐛';
+      fi
+
+      # check for unstaged changes
+      if ! $(git diff-files --quiet --ignore-submodules --); then
+        s+='🦋';
+      fi
+
+      # check for uncommitted changes in the index
+      if ! $(git diff --quiet --ignore-submodules --cached); then
+        s+='🦄';
+      fi
+
+      # verify commit pending push
+      if [[ `git diff --stat --cached origin/master` ]]; then
+        s+='🔥';
+      fi
+
+      b="$(git symbolic-ref --quiet --short HEAD 2> /dev/null || \
+        git rev-parse --short HEAD 2> /dev/null || \
+        echo 'unknown')";
+
+      [ -n "${s}" ] && s="[${s}]";
+      echo -e " (${b})${s}";
+    else
+      return;
+    fi
+  else
+    return;
+  fi
+}
+
+# colors
 reset="\[\033[00m\]";
-path="\[\033[01;33m\]";
+folder="\[\033[01;33m\]";
 branch="\[\033[00;32m\]";
 
-export PS1="\u🌀\h ::${path} \W${reset} -${branch}\$(git_prompt)${reset} $ "
+# custom
+export PS1="\u🌀\h ::${folder} \W${reset} -${branch}\$(gitprompt)${reset} $ "

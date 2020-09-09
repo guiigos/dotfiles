@@ -1,26 +1,73 @@
+
 {
-	"always_show_minimap_viewport": true,
-	"bold_folder_labels": true,
+	// sets the colors used within the text area
 	"color_scheme": "Packages/Material Theme/schemes/Material-Theme.tmTheme",
-	"font_options":
-	[
-		"gray_antialias",
+
+	// configure settings for fonts
+  "font_face": "",
+  "font_size": 10,
+  "font_options": [
+    "gray_antialias",
 		"subpixel_antialias"
 	],
-	"font_size": 11,
-	"ignored_packages":
-	[
-		"Vintage"
-	],
+
+  // set to false to prevent line numbers being drawn in the gutter
+  "line_numbers": true,
+
+  // set to false to hide the gutter altogether
+  "gutter": true,
+
+  // spacing between the gutter and the text
+  "margin": 4,
+
+  // fold buttons are the triangles shown in the gutter to fold regions of text
+  "fold_buttons": true,
+	"fade_fold_buttons": true,
+
+	// the number of spaces a tab is considered equal to
+  "tab_size": 2,
+
+  // disables horizontal scrolling if enabled
+	"word_wrap": "false",
+	"wrap_width": 0,
+
+	// always visualise the viewport on the minimap
+	"always_show_minimap_viewport": true,
+
+	// additional spacing of each line, in pixels
+  "line_padding_top": 2,
+  "line_padding_bottom": 2,
+
+  // controls how the indent guides are drawn
 	"indent_guide_options":
 	[
 		"draw_normal",
 		"draw_active"
 	],
-	"line_padding_bottom": 2,
-	"line_padding_top": 2,
-	"overlay_scroll_bars": "enabled",
-	"tab_size": 4,
+
+	// encoding used when saving new files
+	"default_encoding": "UTF-8",
+	"show_encoding": true,
+
+	// enable auto complete to be triggered automatically when typing
+  "auto_complete": true,
+	"auto_complete_delay": 50,
+
+	// the theme controls the look
 	"theme": "Material-Theme.sublime-theme",
-	"word_wrap": "false"
+
+	// set to 0 to disable smooth scrolling
+	"scroll_speed": 1.0,
+
+	// show folders in the side bar in bold
+	"bold_folder_labels": true,
+
+	// valid values are "system", "enabled" and "disabled"
+  "overlay_scroll_bars": "system",
+
+	// list any packages to ignore here
+	"ignored_packages":
+	[
+		"Vintage"
+	]
 }
