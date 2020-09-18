@@ -50,7 +50,8 @@ brew tap heroku/brew && brew install heroku;
 installbrew node true;            # https://docs.npmjs.com/
 installbrew nvm true;             # https://github.com/nvm-sh/nvm
 installbrew yarn true;            # https://yarnpkg.com/en/docs/cli/
-installbrew git true;             # https://git-scm.com/doc
+installbrew git true;             # https://git-scm.com/doc/
+installbrew asciinema true;       # https://asciinema.org/docs/
 installbrew openssl true;         # https://www.openssl.org/docs/
 installbrew postgresql true;      # https://www.postgresql.org/docs/
 
