@@ -65,6 +65,7 @@ installnpm "cowsay" cowsay true false;                        # https://www.npmj
 installnpm "qrip" qrip true false;                            # https://www.npmjs.com/package/qrip
 installnpm "workin-hard" workin-hard true false;              # https://www.npmjs.com/package/workin-hard
 installnpm "sort-package-json" sort-package-json true false;  # https://www.npmjs.com/package/sort-package-json
+installnpm "heroku" heroku true false;                        # https://www.npmjs.com/package/heroku
 installnpm "pm2" pm2 true true;                               # https://www.npmjs.com/package/pm2
 
 # clean
