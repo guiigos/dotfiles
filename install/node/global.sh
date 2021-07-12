@@ -48,6 +48,7 @@ npm config set init.author.email "guiigos.alves@gmail.com";
 npm config set save-prefix="~";
 
 # globals
+installnpm "verdaccio" verdaccio true false;                  # https://www.npmjs.com/package/verdaccio
 installnpm "typescript" typescript true false;                # https://www.npmjs.com/package/typescript
 installnpm "create-next-app" create-next-app true false;      # https://www.npmjs.com/package/create-next-app
 installnpm "create-react-app" create-react-app true false;    # https://www.npmjs.com/package/create-react-app
