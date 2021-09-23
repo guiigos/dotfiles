@@ -1,5 +1,12 @@
 #!/bin/bash
 
+#  ██████╗ ███████╗██╗  ██╗
+# ██╔═══██╗██╔════╝╚██╗██╔╝
+# ██║   ██║███████╗ ╚███╔╝
+# ██║   ██║╚════██║ ██╔██╗
+# ╚██████╔╝███████║██╔╝ ██╗
+#  ╚═════╝ ╚══════╝╚═╝  ╚═╝
+
 ## scutil
 computername="Guilherme"
 sudo scutil --set ComputerName "${computername}"    # scutil --get ComputerName

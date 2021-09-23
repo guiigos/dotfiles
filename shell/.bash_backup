@@ -1,5 +1,12 @@
 #!/bin/bash
 
+# ██████╗  █████╗  ██████╗██╗  ██╗██╗   ██╗██████╗
+# ██╔══██╗██╔══██╗██╔════╝██║ ██╔╝██║   ██║██╔══██╗
+# ██████╔╝███████║██║     █████╔╝ ██║   ██║██████╔╝
+# ██╔══██╗██╔══██║██║     ██╔═██╗ ██║   ██║██╔═══╝
+# ██████╔╝██║  ██║╚██████╗██║  ██╗╚██████╔╝██║
+# ╚═════╝ ╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝ ╚═════╝ ╚═╝
+
 red="\033[1;31m";
 blue="\033[1;34m";
 green="\033[1;32m";
@@ -94,17 +101,31 @@ function github {
   create "GitHub" false
   cd ..
 }
+
 function gitlab {
   create "GitLab" false
   cd ..
 }
+
 function heroku {
   create "Heroku" false
   cd ..
 }
+
 function ini {
+  clear
   printf "${blue}____________________________________${default}\n"
-  echo "Backup GIT repositories"
+  echo "      ___                       ___      "
+  echo "     /\  \          ___        /\  \     "
+  echo "    /::\  \        /\  \       \:\  \    "
+  echo "   /:/\:\  \       \:\  \       \:\  \   "
+  echo "  /:/  \:\  \      /::\__\      /::\  \  "
+  echo " /:/__/_\:\__\  __/:/\/__/     /:/\:\__\ "
+  echo " \:\  /\ \/__/ /\/:/  /       /:/  \/__/ "
+  echo "  \:\ \:\__\   \::/__/       /:/  /      "
+  echo "   \:\/:/  /    \:\__\       \/__/       "
+  echo "    \::/  /      \/__/                   "
+  echo "     \/__/                               "
   printf "${blue}____________________________________${default}\n"
   echo "   ${red}[0]${default} - GitHub"
   echo "   ${red}[1]${default} - GitLab"
@@ -129,15 +150,12 @@ function ini {
   elif [ "${key}" -eq "4" ]; then
     clear
   else
-    clear
     ini
   fi
 }
 
-clear
 ini
 read -n1 -r -p "Press a key to exit..."
-echo "\nClosed..."
 tput init
 sleep 1s
 clear
