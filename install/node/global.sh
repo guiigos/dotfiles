@@ -46,6 +46,11 @@ else
   msginstalled "NodeJs";
 fi
 
+# versions
+nvm install 10.22.0 # dubniun
+nvm install 12.19.0 # erbium
+nvm install 14.13.0 # current
+
 # create file autocomplete
 npm completion >> ~/.bashrc;
 
