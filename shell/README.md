@@ -12,5 +12,18 @@ These files are scripts that are executed when bash is invoked and contain prefe
 ## Usage
 The files must be inserted in the `~/` directory to work.
 
+```bash
+$ ln -s ~/.dotfiles/shell/.inputrc ~/.inputrc
+
+$ ln -s ~/.dotfiles/shell/.hushlogin ~/.hushlogin
+
+$ ln -s ~/.dotfiles/shell/.bash_backup ~/.bash_backup
+$ ln -s ~/.dotfiles/shell/.bash_prompt ~/.bash_prompt
+$ ln -s ~/.dotfiles/shell/.bash_aliases ~/.bash_aliases
+$ ln -s ~/.dotfiles/shell/.bash_functions ~/.bash_functions
+$ ln -s ~/.dotfiles/shell/.bash_prompt ~/.bash_prompt
+$ ln -s ~/.dotfiles/shell/.bash_profile ~/.bash_profile
+```
+
 ## License
 [![License: MIT](https://img.shields.io/github/license/guiigos/dotfiles?color=black&style=flat-square)](../LICENSE)
