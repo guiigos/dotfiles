@@ -11,6 +11,7 @@ Performs the installation of programs using [**Brew**](https://brew.sh) and [**C
 To perform the installation run the [**install.sh**](install.sh) file with the command below.
 
 ```bash
+$ git clone https://github.com/guiigos/dotfiles.git ~/.dotfiles
 $ sh install.sh
 ```
 
