@@ -5,5 +5,9 @@ Git environment customization file that allows you to read and set configuration
 ## Usage
 The file must be inserted into the `~/` directory to work.
 
+```bash
+$ ln -s ~/.dotfiles/git/.gitconfig ~/.gitconfig
+```
+
 ## License
 [![License: MIT](https://img.shields.io/github/license/guiigos/dotfiles?color=black&style=flat-square)](../LICENSE)
