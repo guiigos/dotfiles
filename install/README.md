@@ -12,7 +12,7 @@ To perform the installation run the [**install.sh**](install.sh) file with the c
 
 ```bash
 $ git clone https://github.com/guiigos/dotfiles.git ~/.dotfiles
-$ sh install.sh
+$ sh ~/.dotfiles/install/install.sh
 ```
 
 ## License
