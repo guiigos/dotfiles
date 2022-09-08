@@ -67,6 +67,7 @@ installnpm "create-react-app" create-react-app true false;    # https://www.npmj
 installnpm "react-native-cli" react-native-cli true false;    # https://www.npmjs.com/package/react-native-cli
 installnpm "nodemon" nodemon true true;                       # https://www.npmjs.com/package/nodemon
 installnpm "ngrok" ngrok true false;                          # https://www.npmjs.com/package/ngrok
+installnpm "npkill" npkill true false;                        # https://www.npmjs.com/package/npkill
 installnpm "npm-dview" npm-dview true false;                  # https://www.npmjs.com/package/npm-dview
 installnpm "npm-check" npm-check true false;                  # https://www.npmjs.com/package/npm-check
 installnpm "http-server" http-server true false;              # https://www.npmjs.com/package/http-server
