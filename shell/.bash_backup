@@ -76,27 +76,6 @@ function gl {
   echo ""
 }
 
-# $1 - respositorio
-function hr {
-  if [ "$#" -eq "1" ]; then
-    if [ -d "$1" ]; then
-      echo "${yellow}==> $1 [exist]${default}"
-      cd $1
-      tput init
-      git checkout -- .
-      git pull
-      cd ..
-    else
-      echo "${green}==> $1 ✔${default}\n"
-      tput init
-      git clone https://git.heroku.com/$1.git
-    fi
-  else
-    echo "${red}✖ Parameters ($#/1) ✖${default}"
-  fi
-  echo ""
-}
-
 function github {
   create "GitHub" false
   cd ..
@@ -104,11 +83,6 @@ function github {
 
 function gitlab {
   create "GitLab" false
-  cd ..
-}
-
-function heroku {
-  create "Heroku" false
   cd ..
 }
 
@@ -127,27 +101,25 @@ function ini {
   echo "    \::/  /      \/__/                   "
   echo "     \/__/                               "
   printf "${blue}____________________________________${default}\n"
-  echo "   ${red}[0]${default} - GitHub"
-  echo "   ${red}[1]${default} - GitLab"
-  echo "   ${red}[2]${default} - Heroku"
+  echo "   ${red}[0]${default} - All"
   echo
-  echo "   ${red}[3]${default} - All"
-  echo "   ${red}[4]${default} - Exit"
+  echo "   ${red}[1]${default} - GitHub"
+  echo "   ${red}[2]${default} - GitLab"
+  echo
+  echo "   ${red}[9]${default} - Exit"
   echo "${blue}____________________________________${default}\n"
   read -n1 -r -p "Enter option: " key;
   echo "\n"
 
   if [ "${key}" -eq "0" ]; then
     github
+    gitlab
+    todo
   elif [ "${key}" -eq "1" ]; then
-    gitlab
-  elif [ "${key}" -eq "2" ]; then
-    heroku
-  elif [ "${key}" -eq "3" ]; then
     github
+  elif [ "${key}" -eq "2" ]; then
     gitlab
-    heroku
-  elif [ "${key}" -eq "4" ]; then
+  elif [ "${key}" -eq "9" ]; then
     clear
   else
     ini
