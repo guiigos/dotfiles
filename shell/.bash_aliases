@@ -34,9 +34,6 @@ alias hideDesktop="defaults write com.apple.finder CreateDesktop -bool false && 
 alias showSystem="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
 alias hideSystem="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
 
-# lock screen
-alias lock="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
-
 # get week number
 alias week="date +%V"
 
@@ -61,8 +58,7 @@ alias la="command ls -laFG"   # detailed listing including hidden files
 # historic
 alias h=history
 alias clr=clear
-alias ch="history -c; history -w; rm ~/.bash_history"
-alias cf="defaults delete com.apple.finder GoToField; defaults delete com.apple.finder GoToFieldHistory"
+alias ch="history -c; history -w"
 
 # remove files
 alias dsstore="find . -type f -name '*.DS_Store' -ls -delete"
