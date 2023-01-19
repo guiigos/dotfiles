@@ -55,13 +55,14 @@ brew tap heroku/brew && brew install heroku;
 
 # https://docs.brew.sh/Manpage.html
 installbrew node true;            # https://docs.npmjs.com/
-installbrew nvm true;             # https://github.com/nvm-sh/nvm
+installbrew nvm true;             # https://github.com/nvm-sh/nvm/
 installbrew yarn true;            # https://yarnpkg.com/en/docs/cli/
 installbrew git true;             # https://git-scm.com/doc/
+installbrew git-flow true;        # https://github.com/nvie/gitflow/
 installbrew asciinema true;       # https://asciinema.org/docs/
 installbrew openssl true;         # https://www.openssl.org/docs/
 installbrew postgresql true;      # https://www.postgresql.org/docs/
-installbrew git-quick-stats true; # https://github.com/arzzen/git-quick-stats
+installbrew git-quick-stats true; # https://github.com/arzzen/git-quick-stats/
 
 # https://gillesfabio.github.io/homebrew-cask-homepage
 installcask google-chrome;
