@@ -76,6 +76,7 @@ installcask insomnia;
 installcask gifcapture;
 installcask appcleaner;
 installcask spectacle;
+installcask veracrypt;
 installcask docker;
 installcask slack;
 installcask vlc;
