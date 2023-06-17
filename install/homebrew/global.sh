@@ -65,6 +65,7 @@ installbrew postgresql true;      # https://www.postgresql.org/docs/
 installbrew git-quick-stats true; # https://github.com/arzzen/git-quick-stats/
 
 # https://gillesfabio.github.io/homebrew-cask-homepage
+installcask graphql-playground
 installcask google-chrome;
 installcask google-backup-and-sync;
 installcask dropbox;
