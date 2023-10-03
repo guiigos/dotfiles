@@ -19,4 +19,4 @@ More infos in [**dotfiles.github.io**](https://dotfiles.github.io/)!
 - [**Sublime**](sublime/)
 
 ## License
-[![License: MIT](https://img.shields.io/github/license/guiigos/dotfiles?color=black&style=flat-square)](./LICENSE)
+[![License: MIT](https://img.shields.io/github/license/guiigos/dotfiles?style=flat-square)](./LICENSE)
