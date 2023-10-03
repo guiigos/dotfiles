@@ -1,5 +1,6 @@
-# macos
+# MacOs
 ._*
+.DS_*
 .DS_Store
 .DS_Store?
 .Trashes
