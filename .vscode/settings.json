@@ -1,46 +1,26 @@
 {
-  "workbench.iconTheme": "vscode-icons",
+  "workbench.iconTheme": "vs-seti",
   "vsicons.associations.files": [
     {
       "icon": "shell",
       "extensions": [
-        ".bash_functions",
-        ".bash_aliases",
-        ".bash_backup",
-        ".bash_profile",
-        ".bash_prompt",
+        ".alias",
+        ".backup",
+        ".brew",
+        ".wiki",
         ".hushlogin",
-        ".inputrc"
+        ".zshrc"
       ],
       "filename": true,
       "format": "svg"
     },
-    {
-      "icon": "json",
-      "extensions": [
-        ".sublime-settings"
-      ],
-      "filename": true,
-      "format": "svg"
-    },
-    {
-      "icon": "html",
-      "extensions": [
-        ".sublime-snippet"
-      ],
-      "filename": true,
-      "format": "svg"
-    }
   ],
   "files.associations": {
-    "*.bash_functions": "shellscript",
-    "*.bash_aliases": "shellscript",
-    "*.bash_backup": "shellscript",
-    "*.bash_profile": "shellscript",
-    "*.bash_prompt": "shellscript",
+    "*.alias": "shellscript",
+    "*.backup": "shellscript",
+    "*.brew": "shellscript",
+    "*.wiki": "shellscript",
     "*.hushlogin": "shellscript",
-    "*.inputrc": "shellscript",
-    "*.sublime-settings": "json",
-    "*.sublime-snippet": "html",
+    "*.zshrc": "shellscript",
   }
 }

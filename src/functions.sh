@@ -5,44 +5,44 @@
 # ██║     ╚██████╔╝██║ ╚████║╚██████╗   ██║   ██║╚██████╔╝██║ ╚████║███████║
 # ╚═╝      ╚═════╝ ╚═╝  ╚═══╝ ╚═════╝   ╚═╝   ╚═╝ ╚═════╝ ╚═╝  ╚═══╝╚══════╝
 
-# colors
-red="\033[1;31m";
-blue="\033[1;34m";
-green="\033[1;32m";
-yellow="\033[1;33m";
-default="\033[0m";
+# cores
+yellow() {
+  echo "\033[33m$1\033[0m"
+}
 
-# already installed
+green() {
+  echo "\033[32m$1\033[0m"
+}
+
+blue() {
+  echo "\033[34m$1\033[0m"
+}
+
+red() {
+  echo "\033[31m$1\033[0m"
+}
+
+# mensagens
 function msgcheck {
-  echo "${green}=> $1 ✔${default}";
+  green "=> $1 ✔"
 }
 
-# installing
 function msginstall {
-  echo "${yellow}==> $1 [installing]${default}";
+  yellow "==> $1 [installing]"
 }
 
-# installed
 function msginstalled {
-  echo "${green}==> $1 installed ✔${default}";
+  green "==> $1 installed ✔"
 }
 
-# update
 function msgupdate {
-  echo "${blue}==> $1 [updating]${default}";
+  blue "==> $1 [updating]"
 }
 
-# updated
 function msgupdated {
-  echo "${blue}==> $1 updated ✔${default}";
+  blue "==> $1 updated ✔"
 }
 
-# error
 function msgerror {
-  echo "${red}✖ $1 ✖${default}";
-}
-
-# message
-function msg {
-  echo "${green} $1 ${default}";
+  red "✖ $1 ✖"
 }

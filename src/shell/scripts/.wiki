@@ -1,0 +1,106 @@
+#!/bin/bash
+
+# ██╗    ██╗██╗██╗  ██╗██╗        ██╗███████╗
+# ██║    ██║██║██║ ██╔╝██║        ██║██╔════╝
+# ██║ █╗ ██║██║█████╔╝ ██║        ██║███████╗
+# ██║███╗██║██║██╔═██╗ ██║   ██   ██║╚════██║
+# ╚███╔███╔╝██║██║  ██╗██║██╗╚█████╔╝███████║
+#  ╚══╝╚══╝ ╚═╝╚═╝  ╚═╝╚═╝╚═╝ ╚════╝ ╚══════╝
+
+function restore {
+  read -e -p "Digite o caminho do arquivo de backup: " caminho
+  
+  if [ ! -f "$caminho" ]; then
+    echo "Arquivo de backup não encontrado no caminho fornecido: $caminho"
+    restore
+  fi
+
+  docker network create wiki
+
+  docker run \
+    --name wiki-postgres \
+    --network wiki \
+    --env POSTGRES_DB=wiki \
+    --env POSTGRES_PASSWORD=wikipassword \
+    --env POSTGRES_USER=wikiuser \
+    --restart unless-stopped \
+    --detach postgres
+
+  is_postgres_ready() {
+    docker exec wiki-postgres pg_isready -U wikiuser > /dev/null 2>&1
+  }
+
+  while ! is_postgres_ready; do
+    echo "Aguardando o PostgreSQL..."
+    sleep 2
+  done
+
+  docker cp "$caminho" wiki-postgres:/wiki.backup
+
+  docker exec -i wiki-postgres pg_restore \
+    --verbose \
+    --username=wikiuser \
+    --dbname=wiki \
+    /wiki.backup
+
+  docker run \
+    --detach \
+    --network wiki \
+    --publish 3000:3000 \
+    --user root \
+    --name wiki-server \
+    --restart unless-stopped \
+    --env "DB_TYPE=postgres" \
+    --env "DB_HOST=wiki-postgres" \
+    --env "DB_PORT=5432" \
+    --env "DB_USER=wikiuser" \
+    --env "DB_PASS=wikipassword" \
+    --env "DB_NAME=wiki" \
+    requarks/wiki:2
+}
+
+function backup {
+  read -p "Digite o nome do arquivo: " nome
+
+  if [ -z "$nome" ]; then
+    echo "Você não informou um nome."
+    backup
+  fi
+
+  docker exec -i wiki-postgres pg_dump \
+    --verbose \
+    --username=wikiuser \
+    --format tar \
+    --file "$nome".backup \
+    wiki
+
+  docker cp wiki-postgres:/"$nome".backup "$nome".backup
+  docker exec -i wiki-postgres rm "$nome".backup
+}
+
+function ini {
+  clear
+
+  npx figlet Wiki.JS
+
+  echo "Escolha uma opção:"
+  echo "b - Realizar backup"
+  echo "r - Restaurar ambiente"
+  
+  read -n1 -p "Pressione uma tecla: " key
+  echo
+
+  case "${key}" in
+    r)
+      restore
+      ;;
+    b)
+      backup
+      ;;
+    *)
+      ini
+      ;;
+  esac
+}
+
+ini

@@ -9,14 +9,11 @@ More infos in [**dotfiles.github.io**](https://dotfiles.github.io/)!
 
 **Warning:** If you want to use the personal configuration files, check the code and check if it meets your needs. Do not run any files without being sure of the effects. Remembering that they are personal files, use at your own risk.
 
-## Elements
-#### Installation
-- [**Installing**](install/)
+## Installation
 
-#### Preferences
-- [**Git**](git/)
-- [**Shell**](shell/)
-- [**Sublime**](sublime/)
+```bash
+$ bash install.sh
+```
 
 ## License
 [![License: MIT](https://img.shields.io/github/license/guiigos/dotfiles?style=flat-square)](./LICENSE)
