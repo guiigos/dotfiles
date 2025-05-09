@@ -1,18 +1,9 @@
-#!/bin/bash
-
-#  █████╗ ██╗     ██╗ █████╗ ███████╗
-# ██╔══██╗██║     ██║██╔══██╗██╔════╝
-# ███████║██║     ██║███████║███████╗
-# ██╔══██║██║     ██║██╔══██║╚════██║
-# ██║  ██║███████╗██║██║  ██║███████║
-# ╚═╝  ╚═╝╚══════╝╚═╝╚═╝  ╚═╝╚══════╝
-
 # spotlight
 alias spotoff="sudo mdutil -a -i off" # sesativa o serviço de spotlight
 alias spoton="sudo mdutil -a -i on"   # reativa o serviço de spotlight
 
 # desktop ícones
-alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"  # exibe os ícones da área de trabalho
+alias showDesktop="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"  # exibe os ícones da área de trabalho
 alias hideDesktop="defaults write com.apple.finder CreateDesktop -bool false && killall Finder" # oculta os ícones da área de trabalho
 
 # arquivos do sistema
@@ -45,10 +36,13 @@ alias ch="history -c; history -w" # limpa completamente o histórico de comandos
 # remover arquivos específicos do mac
 alias dsstore="find . -type f -name '*.DS_Store' -ls -delete"
 
-# repositórios
-alias github="cd $HOME/Documents/Sistemas/GitHub/"
-alias gitlab="cd $HOME/Documents/Sistemas/GitLab/"
-
 # arquivos personalizados
 alias wiki="sh ~/.wiki"
 alias backup="sh ~/.backup"
+
+# criar arquivo ZIP
+# $1 - nome do arquivo ZIP
+# $2 - pasta que será compactada
+function zippass() {
+  sudo zip -r9 -e $1.zip $2
+}

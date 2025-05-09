@@ -5,11 +5,26 @@
 # ██║██║ ╚████║███████║   ██║   ██║  ██║███████╗███████╗
 # ╚═╝╚═╝  ╚═══╝╚══════╝   ╚═╝   ╚═╝  ╚═╝╚══════╝╚══════╝
 
-script_dir=$(dirname "$(realpath "$0")")
+src=$(realpath "$(dirname "$0")")
 
-rm -f ~/.gitconfig
-ln -s "${script_dir}/git/.gitconfig" ~/.gitconfig
+source "${src}/functions.sh"
 
-sh "${script_dir}/shell/global.sh"
-sh "${script_dir}/homebrew/global.sh"
-sh "${script_dir}/node/global.sh"
+# configure shell
+file_shell="${src}/shell/global.sh"
+chmod +x $file_shell
+. $file_shell
+
+# configure git
+file_git="${src}/git/global.sh"
+chmod +x $file_git
+. $file_git
+
+# configure homebrew
+file_homebrew="${src}/homebrew/global.sh"
+chmod +x $file_homebrew
+. $file_homebrew
+
+# configure node
+file_node="${src}/node/global.sh"
+chmod +x $file_node
+. $file_node

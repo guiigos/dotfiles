@@ -1,0 +1,110 @@
+ROOT_DIR="$(cd "$(dirname "$(readlink -f "$0")")/../../.." && pwd)"
+source "$ROOT_DIR/.env"
+
+function fnRestore {
+  read -e -p "Informe o arquivo de backup: " FILE_NAME
+
+  if [ ! -f "$FILE_NAME" ]; then
+    echo "Arquivo de backup não encontrado no caminho fornecido: $FILE_NAME"
+    fnRestore
+  fi
+
+  docker network create "$WIKI_NETWORK"
+
+  docker run \
+    --name "$WIKI_CONTAINER_NAME_DATABASE" \
+    --network "$WIKI_NETWORK" \
+    --env POSTGRES_DB="$WIKI_DB_NAME" \
+    --env POSTGRES_USER="$WIKI_DB_USER" \
+    --env POSTGRES_PASSWORD="$WIKI_DB_PASSWORD" \
+    --restart unless-stopped \
+    --detach postgres
+
+  is_postgres_ready() {
+    docker exec "$WIKI_CONTAINER_NAME_DATABASE" pg_isready -U "$WIKI_DB_USER" > /dev/null 2>&1
+  }
+
+  while ! is_postgres_ready; do
+    echo "Aguardando o PostgreSQL..."
+    sleep 2
+  done
+
+  docker cp "$FILE_NAME" "$WIKI_CONTAINER_NAME_DATABASE":/"$FILE_NAME".backup
+
+  docker exec -i "$WIKI_CONTAINER_NAME_DATABASE" pg_restore \
+    --verbose \
+    --username="$WIKI_DB_USER" \
+    --dbname="$WIKI_DB_NAME" \
+    /"$FILE_NAME".backup
+
+  docker run \
+    --detach \
+    --network "$WIKI_NETWORK" \
+    --publish 3000:3000 \
+    --user root \
+    --name "$WIKI_CONTAINER_NAME_SERVER" \
+    --restart unless-stopped \
+    --env "DB_TYPE=postgres" \
+    --env "DB_HOST=$WIKI_CONTAINER_NAME_DATABASE" \
+    --env "DB_PORT=5432" \
+    --env "DB_USER=$WIKI_DB_USER" \
+    --env "DB_PASS=$WIKI_DB_PASSWORD" \
+    --env "DB_NAME=$WIKI_DB_NAME" \
+    requarks/wiki:2
+}
+
+function fnBackup {
+  read -p "Digite o nome do arquivo: " FILE_NAME
+
+  if [ -z "$FILE_NAME" ]; then
+    echo "Você não informou um nome!"
+    fnBackup
+  fi
+
+  docker exec -i "$WIKI_CONTAINER_NAME_DATABASE" pg_dump \
+    --verbose \
+    --username="$WIKI_DB_USER" \
+    --format tar \
+    --file "$FILE_NAME".backup \
+    "$WIKI_DB_NAME"
+
+  docker cp "$WIKI_CONTAINER_NAME_DATABASE":/"$FILE_NAME".backup "$FILE_NAME".backup
+  docker exec -i "$WIKI_CONTAINER_NAME_DATABASE" rm "$FILE_NAME".backup
+}
+
+function readKey {
+  read -n1 -p "Pressione uma tecla: " key
+  echo
+
+  case "${key}" in
+    r)
+      fnRestore
+      ;;
+    b)
+      fnBackup
+      ;;
+    *)
+      readKey
+      ;;
+  esac
+}
+
+function ini {
+  clear
+
+  npx -q figlet Wiki.JS
+
+  echo "Escolha uma opção:"
+  echo
+  echo "b - Realizar backup"
+  echo "r - Restaurar ambiente"
+  echo
+
+  readKey
+}
+
+ini
+read -n1 -r -p "Pressione uma tecla para sair..."
+tput init
+sleep 1s
+clear

@@ -10,9 +10,8 @@ More infos in [**dotfiles.github.io**](https://dotfiles.github.io/)!
 **Warning:** If you want to use the personal configuration files, check the code and check if it meets your needs. Do not run any files without being sure of the effects. Remembering that they are personal files, use at your own risk.
 
 ## Installation
-
 ```bash
-$ bash install.sh
+$ bash src/install.sh
 ```
 
 ## License

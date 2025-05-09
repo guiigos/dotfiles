@@ -7,8 +7,9 @@
         ".alias",
         ".backup",
         ".brew",
-        ".wiki",
         ".hushlogin",
+        ".sdk",
+        ".wiki",
         ".zshrc"
       ],
       "filename": true,
@@ -19,8 +20,9 @@
     "*.alias": "shellscript",
     "*.backup": "shellscript",
     "*.brew": "shellscript",
-    "*.wiki": "shellscript",
     "*.hushlogin": "shellscript",
+    "*.sdk": "shellscript",
+    "*.wiki": "shellscript",
     "*.zshrc": "shellscript",
   }
 }

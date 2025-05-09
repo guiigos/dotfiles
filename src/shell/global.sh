@@ -1,21 +1,22 @@
+msginstall ohmyzsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-script_dir=$(dirname "$(realpath "$0")")
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+git clone https://github.com/zsh-users/zsh-autosuggestions.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
-function addLinkedFiles() {
-  local filePath=~/"$1"
+git clone https://github.com/spaceship-prompt/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt"
+ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
+msginstalled ohmyzsh
 
-  if [ -e "$filePath" ] || [ -L "$filePath" ]; then
-    echo "O arquivo $filePath já existe e será removido..."
-    rm -f "$filePath"
-  fi
+msginstall sdkman
+sh -c "$(curl -s "https://get.sdkman.io")"
+msginstalled sdkman
 
-  ln -s "${script_dir}/scripts/$1" "$filePath"
-}
-
-addLinkedFiles ".zshrc"
-addLinkedFiles ".brew"
-addLinkedFiles ".alias"
-addLinkedFiles ".wiki"
-addLinkedFiles ".backup"
-addLinkedFiles ".hushlogin"
+folder="shell"
+addLinkedFiles $folder ".alias"
+addLinkedFiles $folder ".backup"
+addLinkedFiles $folder ".wiki"
+addLinkedFiles $folder ".zshrc"
+addLinkedFiles $folder ".brew"
+addLinkedFiles $folder ".sdk"
+addLinkedFiles $folder ".hushlogin"

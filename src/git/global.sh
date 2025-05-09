@@ -1,0 +1,1 @@
+addLinkedFiles "git" ".gitconfig"
