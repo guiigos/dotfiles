@@ -31,6 +31,7 @@ installWithBrew git
 installWithBrew pkgx
 installWithBrew httpie
 installWithBrew lazygit
+installWithBrew postgresql
 
 installWithCask font-fira-code-nerd-font
 
