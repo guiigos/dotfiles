@@ -40,6 +40,7 @@ installWithCask google-drive
 installWithCask battle-net
 installWithCask sublime-text
 installWithCask visual-studio-code
+installWithCask dbeaver-community
 installWithCask notion
 installWithCask obsidian
 installWithCask veracrypt
