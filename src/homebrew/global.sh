@@ -32,6 +32,7 @@ installWithBrew pkgx
 installWithBrew httpie
 installWithBrew lazygit
 installWithBrew postgresql
+installWithBrew heroku/brew/heroku
 
 installWithCask font-fira-code-nerd-font
 
