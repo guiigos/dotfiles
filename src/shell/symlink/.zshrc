@@ -16,3 +16,10 @@ source ~/.sdk
 source ~/.alias
 
 PATH=~/.console-ninja/.bin:$PATH
+
+DOTFILES_DIR=$(dirname $(dirname $(dirname $(dirname $(realpath ~/.zshrc)))))
+ENVFILE=$(realpath "$DOTFILES_DIR/.env");
+if [ -f "$ENVFILE" ]; then
+  source $ENVFILE
+fi
+

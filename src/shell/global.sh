@@ -14,8 +14,6 @@ msginstalled sdkman
 
 folder="shell"
 addLinkedFiles $folder ".alias"
-addLinkedFiles $folder ".backup"
-addLinkedFiles $folder ".wiki"
 addLinkedFiles $folder ".zshrc"
 addLinkedFiles $folder ".brew"
 addLinkedFiles $folder ".sdk"

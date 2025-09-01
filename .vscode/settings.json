@@ -5,12 +5,11 @@
       "icon": "shell",
       "extensions": [
         ".alias",
-        ".backup",
         ".brew",
         ".hushlogin",
         ".sdk",
-        ".wiki",
-        ".zshrc"
+        ".zshrc",
+        ".env",
       ],
       "filename": true,
       "format": "svg"
@@ -18,11 +17,10 @@
   ],
   "files.associations": {
     "*.alias": "shellscript",
-    "*.backup": "shellscript",
     "*.brew": "shellscript",
     "*.hushlogin": "shellscript",
     "*.sdk": "shellscript",
-    "*.wiki": "shellscript",
     "*.zshrc": "shellscript",
+    "*.env": "shellscript",
   }
 }

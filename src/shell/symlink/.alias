@@ -36,10 +36,6 @@ alias ch="history -c; history -w" # limpa completamente o histórico de comandos
 # remover arquivos específicos do mac
 alias dsstore="find . -type f -name '*.DS_Store' -ls -delete"
 
-# arquivos personalizados
-alias wiki="sh ~/.wiki"
-alias backup="sh ~/.backup"
-
 # criar arquivo ZIP
 # $1 - nome do arquivo ZIP
 # $2 - pasta que será compactada
