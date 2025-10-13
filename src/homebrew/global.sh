@@ -54,5 +54,6 @@ installWithCask zoom
 installWithCask docker
 installWithCask drawio
 installWithCask postman
+installWithCask gimp
 
 brew cleanup
