@@ -15,6 +15,10 @@ source ~/.brew
 source ~/.sdk
 source ~/.alias
 
+# inicializa o pyenv
+eval "$(pyenv init --path)"
+eval "$(pyenv init -)"
+
 PATH=~/.console-ninja/.bin:$PATH
 
 DOTFILES_DIR=$(dirname $(dirname $(dirname $(dirname $(realpath ~/.zshrc)))))

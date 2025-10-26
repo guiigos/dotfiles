@@ -33,6 +33,7 @@ installWithBrew httpie
 installWithBrew lazygit
 installWithBrew postgresql
 installWithBrew heroku/brew/heroku
+installWithBrew pyenv
 
 installWithCask font-fira-code-nerd-font
 
@@ -40,7 +41,9 @@ installWithCask google-chrome
 installWithCask google-drive
 installWithCask battle-net
 installWithCask sublime-text
+installWithCask arduino-ide
 installWithCask visual-studio-code
+installWithCask android-studio
 installWithCask dbeaver-community
 installWithCask notion
 installWithCask obsidian
@@ -55,5 +58,9 @@ installWithCask docker
 installWithCask drawio
 installWithCask postman
 installWithCask gimp
+
+# algumas dependencias usam
+# não poluir o PATH
+brew unlink python@3.13
 
 brew cleanup
