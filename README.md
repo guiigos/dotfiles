@@ -15,6 +15,10 @@ More infos in [**dotfiles.github.io**](https://dotfiles.github.io/)!
 
 ```bash
 $ bash src/install.sh
+
+$ bash src/stacks/node/configure.sh
+$ bash src/stacks/python/configure.sh
+$ bash src/stacks/android/configure.sh
 ```
 
 ## License

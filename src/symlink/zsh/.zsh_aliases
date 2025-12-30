@@ -1,0 +1,26 @@
+alias showDesktop="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
+alias hideDesktop="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
+
+alias showSystem="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
+alias hideSystem="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
+
+alias -- -="cd -"             # (-) returns to the last visited directory
+alias ~="cd ~"                # (~) navigates to the user home directory
+alias cs="cd ..;ls;"          # (cs) moves up one level in the current directory
+alias cd..="cd .."            # cd..
+alias ..="cd .."              # ..
+alias ...="cd ../.."          # ...
+alias ....="cd ../../.."      # ....
+alias .....="cd ../../../.."  # .....
+
+alias dir="pwd"               # shows the absolute path of the current directory
+
+alias ls="command ls -G"      # displays files and directories using colors to differentiate them
+alias ll="command ls -lFG"    # displays a detailed listing with permissions, size, and other details
+alias la="command ls -laFG"   # displays a detailed listing, including hidden files
+
+alias h=history
+alias clr=clear
+alias ch="history -c; history -w"
+
+alias dsstore="find . -type f -name '*.DS_Store' -ls -delete"

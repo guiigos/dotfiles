@@ -1,26 +1,9 @@
 {
-  "workbench.iconTheme": "vs-seti",
-  "vsicons.associations.files": [
-    {
-      "icon": "shell",
-      "extensions": [
-        ".alias",
-        ".brew",
-        ".hushlogin",
-        ".sdk",
-        ".zshrc",
-        ".env",
-      ],
-      "filename": true,
-      "format": "svg"
-    },
-  ],
   "files.associations": {
-    "*.alias": "shellscript",
-    "*.brew": "shellscript",
     "*.hushlogin": "shellscript",
-    "*.sdk": "shellscript",
     "*.zshrc": "shellscript",
+    "*.zsh_aliases": "shellscript",
+    "*.zsh_environment": "shellscript",
     "*.env": "shellscript",
   }
 }

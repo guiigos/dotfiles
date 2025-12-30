@@ -1,0 +1,31 @@
+[user]
+  name = Guilherme Alves
+  email = guiigos.alves@gmail.com
+
+[credential]
+  helper = osxkeychain
+
+[alias]
+  # https://git-scm.com/docs/git-init
+  i = init
+
+  # https://git-scm.com/docs/git-status
+  s = status
+
+  # https://git-scm.com/docs/git-clone
+  c = clone --recursive
+
+  # https://git-scm.com/docs/git-add
+  a = add --all
+
+  # https://git-scm.com/docs/git-log
+  l = log -5 --oneline
+
+  # https://git-scm.com/docs/git-push
+  ps = push origin master
+
+[url "https://github.com/"] # git clone gh:user/repository.git
+  insteadOf = gh:
+
+[url "https://gitlab.com/"] # git clone ls:group/repository.git
+  insteadOf = gl:

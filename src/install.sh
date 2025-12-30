@@ -1,30 +1,19 @@
-# ██╗███╗   ██╗███████╗████████╗ █████╗ ██╗     ██╗
-# ██║████╗  ██║██╔════╝╚══██╔══╝██╔══██╗██║     ██║
-# ██║██╔██╗ ██║███████╗   ██║   ███████║██║     ██║
-# ██║██║╚██╗██║╚════██║   ██║   ██╔══██║██║     ██║
-# ██║██║ ╚████║███████║   ██║   ██║  ██║███████╗███████╗
-# ╚═╝╚═╝  ╚═══╝╚══════╝   ╚═╝   ╚═╝  ╚═╝╚══════╝╚══════╝
+SRC=$(realpath "$(dirname "$0")")
 
-src=$(realpath "$(dirname "$0")")
+source "${SRC}/functions.sh"
 
-source "${src}/functions.sh"
+FILE="${SRC}/brew/install.sh"
+chmod +x $FILE
+. $FILE
 
-# configure shell
-file_shell="${src}/shell/global.sh"
-chmod +x $file_shell
-. $file_shell
+FILE="${SRC}/tools/sdkman/install.sh"
+chmod +x $FILE
+. $FILE
 
-# configure git
-file_git="${src}/git/global.sh"
-chmod +x $file_git
-. $file_git
+FILE="${SRC}/tools/ohmyzsh/install.sh"
+chmod +x $FILE
+. $FILE
 
-# configure homebrew
-file_homebrew="${src}/homebrew/global.sh"
-chmod +x $file_homebrew
-. $file_homebrew
-
-# configure node
-file_node="${src}/node/global.sh"
-chmod +x $file_node
-. $file_node
+FILE="${SRC}/symlink/install.sh"
+chmod +x $FILE
+. $FILE

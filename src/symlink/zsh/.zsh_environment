@@ -1,0 +1,26 @@
+# homebrew
+export HOMEBREW_PREFIX="/opt/homebrew/opt"
+
+# nvm
+export NVM_DIR="$HOME/.nvm"
+  [ -s "$HOMEBREW_PREFIX/nvm/nvm.sh" ] && \. "$HOMEBREW_PREFIX/nvm/nvm.sh"
+  [ -s "$HOMEBREW_PREFIX/nvm/etc/bash_completion.d/nvm" ] && \. "$HOMEBREW_PREFIX/nvm/etc/bash_completion.d/nvm"
+
+# sdkman
+export SDKMAN_DIR="$HOME/.sdkman"
+  [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+# pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+
+# java
+export JAVA_HOME="$HOME/.sdkman/candidates/java/current"
+
+# android
+export ANDROID_HOME="$HOME/Library/Android/sdk"
+export ANDROID_SDK_ROOT="$ANDROID_HOME"
+
+export PATH="$ANDROID_HOME/cmdline-tools/latest/bin:$PATH"
+export PATH="$ANDROID_HOME/platform-tools:$PATH"
+export PATH="$ANDROID_HOME/emulator:$PATH"
