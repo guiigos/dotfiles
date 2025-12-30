@@ -3,7 +3,7 @@
   email = guiigos.alves@gmail.com
 
 [credential]
-  helper = osxkeychain
+	helper = osxkeychain
 
 [alias]
   # https://git-scm.com/docs/git-init

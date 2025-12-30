@@ -9,6 +9,8 @@ echo
 brew update
 
 echo
+brewInstall gh
+brewInstall glab
 brewInstall nvm
 brewInstall git
 brewInstall pkgx

@@ -17,3 +17,7 @@ chmod +x $FILE
 FILE="${SRC}/symlink/install.sh"
 chmod +x $FILE
 . $FILE
+
+gh auth login
+glab auth login
+heroku login
