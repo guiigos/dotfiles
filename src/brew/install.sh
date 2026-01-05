@@ -28,6 +28,7 @@ brewInstall arduino-ide
 brewInstall android-studio
 brewInstall visual-studio-code
 brewInstall dbeaver-community
+brewInstall mongodb-compass
 brewInstall docker-desktop
 brewInstall notion
 brewInstall obsidian
