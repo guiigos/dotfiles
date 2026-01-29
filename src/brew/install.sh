@@ -30,9 +30,9 @@ brewInstall visual-studio-code
 brewInstall dbeaver-community
 brewInstall mongodb-compass
 brewInstall docker-desktop
+brewInstall veracrypt-fuse-t
 brewInstall notion
 brewInstall obsidian
-brewInstall veracrypt
 brewInstall gifcapture
 brewInstall spotify
 brewInstall vlc
