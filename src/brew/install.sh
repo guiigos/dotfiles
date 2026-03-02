@@ -18,6 +18,7 @@ brewInstall httpie
 brewInstall lazygit
 brewInstall heroku
 brewInstall pyenv
+brewInstall ollama
 
 brewInstall font-fira-code-nerd-font
 
