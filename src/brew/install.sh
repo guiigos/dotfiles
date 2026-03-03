@@ -22,6 +22,7 @@ brewInstall ollama
 
 brewInstall font-fira-code-nerd-font
 
+brewInstall claude-code
 brewInstall google-chrome
 brewInstall google-drive
 brewInstall sublime-text
