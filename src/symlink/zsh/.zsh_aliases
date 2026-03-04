@@ -1,12 +1,11 @@
-alias showDesktop="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
-alias hideDesktop="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
+alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
+alias hidedesktop="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
 
-alias showSystem="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
-alias hideSystem="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
+alias showsystem="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
+alias hidesystem="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
 
 alias -- -="cd -"             # (-) returns to the last visited directory
 alias ~="cd ~"                # (~) navigates to the user home directory
-alias cs="cd ..;ls;"          # (cs) moves up one level in the current directory
 alias cd..="cd .."            # cd..
 alias ..="cd .."              # ..
 alias ...="cd ../.."          # ...
@@ -21,6 +20,26 @@ alias la="command ls -laFG"   # displays a detailed listing, including hidden fi
 
 alias h=history
 alias clr=clear
-alias ch="history -c; history -w"
+alias clrh="history -c; history -w"
 
-alias dsstore="find . -type f -name '*.DS_Store' -ls -delete"
+alias topdir="du -h -d 1 ~ 2>/dev/null | sort -hr | head"
+
+# cleaning
+alias clean-cache="rm -rf ~/Library/Caches/*"
+alias clean-logs="rm -rf ~/Library/Logs/*"
+alias clean-pip="python3 -m pip cache purge"
+alias clean-npm="npm cache clean --force"
+alias clean-brew="brew cleanup -s"
+alias clean-docker="docker system prune -f"
+alias clean-dsstore="find . -type f -name '*.DS_Store' -ls -delete"
+
+# list
+alias list-venvs="find ~ -maxdepth 4 -type d \( -name ".venv" -o -name "venv" \) -print 2>/dev/null"
+alias list-node-modules="find ~ -type d -name "node_modules" -prune -print 2>/dev/null | head"
+
+doctor() {
+  eval "brew doctor"
+  echo
+  echo
+  eval "npm cache verify"
+}
