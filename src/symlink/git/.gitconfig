@@ -22,7 +22,7 @@
   l = log -5 --oneline
 
   # https://git-scm.com/docs/git-push
-  ps = push origin master
+  ps = push origin main
 
 [url "https://github.com/"] # git clone gh:user/repository.git
   insteadOf = gh:
