@@ -24,3 +24,6 @@ export ANDROID_SDK_ROOT="$ANDROID_HOME"
 export PATH="$ANDROID_HOME/cmdline-tools/latest/bin:$PATH"
 export PATH="$ANDROID_HOME/platform-tools:$PATH"
 export PATH="$ANDROID_HOME/emulator:$PATH"
+
+# postgres client (pg_dump / pg_restore)
+export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
