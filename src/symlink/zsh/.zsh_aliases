@@ -43,3 +43,43 @@ doctor() {
   echo
   eval "npm cache verify"
 }
+
+decrypt() {
+  local dir="$DECRYPT_FOLDER"
+
+  if [ -z "$dir" ]; then
+    echo "Variable DECRYPT_FOLDER not defined"
+    return 1
+  fi
+
+  if [ ! -d "$dir" ]; then
+    echo "Directory not found: $dir"
+    return 1
+  fi
+
+  local files=()
+  for f in "$dir"/*; do
+    [ -f "$f" ] && files+=("$f")
+  done
+
+  if [ ${#files[@]} -eq 0 ]; then
+    echo "No files found in: $dir"
+    return 1
+  fi
+
+  echo "Select a file:"
+  select file in "${files[@]}"; do
+    if [ -n "$file" ]; then
+      echo -n "Enter password: "
+      read -s password
+      echo
+
+      cryptography decrypt "$password" "$file"
+
+      unset password
+      break
+    else
+      echo "Invalid option"
+    fi
+  done
+}
