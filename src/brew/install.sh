@@ -23,6 +23,7 @@ brewInstall libpq
 
 brewInstall font-fira-code-nerd-font
 
+brewInstall codex
 brewInstall claude-code
 brewInstall google-chrome
 brewInstall google-drive

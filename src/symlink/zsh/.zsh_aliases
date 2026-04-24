@@ -58,8 +58,13 @@ decrypt() {
   fi
 
   local files=()
+  local names=()
+
   for f in "$dir"/*; do
-    [ -f "$f" ] && files+=("$f")
+    if [ -f "$f" ]; then
+      files+=("$f")
+      names+=("$(basename "$f")")
+    fi
   done
 
   if [ ${#files[@]} -eq 0 ]; then
@@ -68,8 +73,15 @@ decrypt() {
   fi
 
   echo "Select a file:"
-  select file in "${files[@]}"; do
-    if [ -n "$file" ]; then
+  PS3="Option: "
+
+  select name in "${names[@]}"; do
+    if [ -n "$name" ]; then
+      local index=$((REPLY - 1))
+      local file="${files[$index]}"
+
+      echo "Selected: $name"
+
       echo -n "Enter password: "
       read -s password
       echo
