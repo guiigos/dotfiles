@@ -62,7 +62,7 @@ decrypt() {
   local files=()
   local names=()
 
-  for f in "$dir"/*; do
+  for f in "$dir"/*.vault; do
     if [ -f "$f" ]; then
       files+=("$f")
       names+=("$(basename "$f")")
