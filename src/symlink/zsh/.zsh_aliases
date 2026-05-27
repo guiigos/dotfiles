@@ -174,3 +174,120 @@ decrypt() {
     fi
   done
 }
+
+help() {
+  local category="${1:-all}"
+
+  case "$category" in
+    all)
+      printf "\nCOMMAND HELP\n"
+      printf "Use: help [system|navigation|listing|cleaning|search|functions]\n"
+
+      printf "\nSYSTEM\n"
+      printf "  %-18s %s\n" "showdesktop" "show desktop icons"
+      printf "  %-18s %s\n" "hidedesktop" "hide desktop icons"
+      printf "  %-18s %s\n" "showsystem" "show hidden files in Finder"
+      printf "  %-18s %s\n" "hidesystem" "hide hidden files in Finder"
+      printf "  %-18s %s\n" "ip" "show local IP address"
+
+      printf "\nNAVIGATION\n"
+      printf "  %-18s %s\n" "-" "go back to previous directory"
+      printf "  %-18s %s\n" "~" "go to home directory"
+      printf "  %-18s %s\n" "cd.." "go up one directory"
+      printf "  %-18s %s\n" ".." "go up one directory"
+      printf "  %-18s %s\n" "..." "go up two directories"
+      printf "  %-18s %s\n" "...." "go up three directories"
+      printf "  %-18s %s\n" "....." "go up four directories"
+      printf "  %-18s %s\n" "dir" "show current absolute path"
+
+      printf "\nLISTING\n"
+      printf "  %-18s %s\n" "ls" "list files with colors"
+      printf "  %-18s %s\n" "ll" "detailed file listing"
+      printf "  %-18s %s\n" "la" "detailed listing including hidden files"
+      printf "  %-18s %s\n" "h" "show command history"
+      printf "  %-18s %s\n" "clr" "clear terminal"
+      printf "  %-18s %s\n" "clrh" "clear command history"
+      printf "  %-18s %s\n" "topdir" "show largest home directories"
+
+      printf "\nCLEANING\n"
+      printf "  %-18s %s\n" "clean-cache" "remove macOS cache files"
+      printf "  %-18s %s\n" "clean-logs" "remove macOS log files"
+      printf "  %-18s %s\n" "clean-pip" "clear pip cache"
+      printf "  %-18s %s\n" "clean-npm" "clear npm cache"
+      printf "  %-18s %s\n" "clean-brew" "clean Homebrew cache and old versions"
+      printf "  %-18s %s\n" "clean-docker" "remove unused Docker data"
+      printf "  %-18s %s\n" "clean-dsstore" "delete .DS_Store files from current tree"
+
+      printf "\nSEARCH\n"
+      printf "  %-18s %s\n" "list-venvs" "find virtual environments under home"
+      printf "  %-18s %s\n" "list-node-modules" "find node_modules directories under home"
+
+      printf "\nFUNCTIONS\n"
+      printf "  %-18s %s\n" "doctor" "run quick environment health checks"
+      printf "  %-18s %s\n" "devspace" "inspect disk usage for dev tools"
+      printf "  %-18s %s\n" "decrypt" "decrypt a .vault file from DECRYPT_FOLDER"
+      ;;
+
+    system)
+      printf "\nSYSTEM\n"
+      printf "  %-18s %s\n" "showdesktop" "show desktop icons"
+      printf "  %-18s %s\n" "hidedesktop" "hide desktop icons"
+      printf "  %-18s %s\n" "showsystem" "show hidden files in Finder"
+      printf "  %-18s %s\n" "hidesystem" "hide hidden files in Finder"
+      printf "  %-18s %s\n" "ip" "show local IP address"
+      ;;
+
+    navigation)
+      printf "\nNAVIGATION\n"
+      printf "  %-18s %s\n" "-" "go back to previous directory"
+      printf "  %-18s %s\n" "~" "go to home directory"
+      printf "  %-18s %s\n" "cd.." "go up one directory"
+      printf "  %-18s %s\n" ".." "go up one directory"
+      printf "  %-18s %s\n" "..." "go up two directories"
+      printf "  %-18s %s\n" "...." "go up three directories"
+      printf "  %-18s %s\n" "....." "go up four directories"
+      printf "  %-18s %s\n" "dir" "show current absolute path"
+      ;;
+
+    listing)
+      printf "\nLISTING\n"
+      printf "  %-18s %s\n" "ls" "list files with colors"
+      printf "  %-18s %s\n" "ll" "detailed file listing"
+      printf "  %-18s %s\n" "la" "detailed listing including hidden files"
+      printf "  %-18s %s\n" "h" "show command history"
+      printf "  %-18s %s\n" "clr" "clear terminal"
+      printf "  %-18s %s\n" "clrh" "clear command history"
+      printf "  %-18s %s\n" "topdir" "show largest home directories"
+      ;;
+
+    cleaning)
+      printf "\nCLEANING\n"
+      printf "  %-18s %s\n" "clean-cache" "remove macOS cache files"
+      printf "  %-18s %s\n" "clean-logs" "remove macOS log files"
+      printf "  %-18s %s\n" "clean-pip" "clear pip cache"
+      printf "  %-18s %s\n" "clean-npm" "clear npm cache"
+      printf "  %-18s %s\n" "clean-brew" "clean Homebrew cache and old versions"
+      printf "  %-18s %s\n" "clean-docker" "remove unused Docker data"
+      printf "  %-18s %s\n" "clean-dsstore" "delete .DS_Store files from current tree"
+      ;;
+
+    search)
+      printf "\nSEARCH\n"
+      printf "  %-18s %s\n" "list-venvs" "find virtual environments under home"
+      printf "  %-18s %s\n" "list-node-modules" "find node_modules directories under home"
+      ;;
+
+    functions)
+      printf "\nFUNCTIONS\n"
+      printf "  %-18s %s\n" "doctor" "run quick environment health checks"
+      printf "  %-18s %s\n" "devspace" "inspect disk usage for dev tools"
+      printf "  %-18s %s\n" "decrypt" "decrypt a .vault file from DECRYPT_FOLDER"
+      ;;
+
+    *)
+      printf "Unknown category: %s\n" "$category"
+      printf "Use: help [system|navigation|listing|cleaning|search|functions]\n"
+      return 1
+      ;;
+  esac
+}
