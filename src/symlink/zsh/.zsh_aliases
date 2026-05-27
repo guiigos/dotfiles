@@ -46,6 +46,84 @@ doctor() {
   eval "npm cache verify"
 }
 
+devspace() {
+  echo "===== XCODE / IOS ====="
+  du -sh ~/Library/Developer/* 2>/dev/null
+  du -sh ~/Library/Developer/Xcode/* 2>/dev/null
+
+  echo "\n===== ANDROID ====="
+  du -sh ~/Library/Android/* 2>/dev/null
+  du -sh ~/Library/Android/sdk/* 2>/dev/null
+
+  echo "\n===== DOCKER ====="
+  docker system df 2>/dev/null
+
+  echo "\n===== HOMEBREW ====="
+  du -sh /opt/homebrew 2>/dev/null
+  du -sh /opt/homebrew/Cellar 2>/dev/null
+  du -sh /opt/homebrew/Caskroom 2>/dev/null
+  du -sh ~/Library/Caches/Homebrew 2>/dev/null
+
+  echo "\n===== NODE / JAVASCRIPT ====="
+  du -sh ~/.npm 2>/dev/null
+  du -sh ~/.nvm 2>/dev/null
+  du -sh ~/.yarn 2>/dev/null
+  du -sh ~/Library/pnpm 2>/dev/null
+  du -sh ~/Library/Caches/Yarn 2>/dev/null
+
+  echo "\n===== PYTHON ====="
+  du -sh ~/.pyenv 2>/dev/null
+  du -sh ~/Library/Caches/pip 2>/dev/null
+
+  echo "\n===== GRADLE ====="
+  du -sh ~/.gradle 2>/dev/null
+
+  echo "\n===== AI / MODELS ====="
+  du -sh ~/.ollama 2>/dev/null
+  du -sh ~/.cache/huggingface 2>/dev/null
+  du -sh ~/.codex 2>/dev/null
+  du -sh ~/.claude 2>/dev/null
+
+  echo "\n===== APPLICATION DATA ====="
+  du -sh ~/Library/Application\ Support/Code 2>/dev/null
+  du -sh ~/Library/Application\ Support/AndroidStudio* 2>/dev/null
+  du -sh ~/Library/Application\ Support/Google/Chrome 2>/dev/null
+
+  echo "\n===== CACHE ====="
+  du -sh ~/Library/Caches/Google 2>/dev/null
+  du -sh ~/Library/Caches/Homebrew 2>/dev/null
+
+  echo "\n===== TOP 20 DIRECTORIES ====="
+  du -hd 1 ~ 2>/dev/null | sort -hr | head -20
+
+  echo "\n===== TOP 15 LARGEST FILES ====="
+  find ~ \
+    -type f \
+    -not -path "*/Library/*" \
+    -exec stat -f "%z %N" {} + 2>/dev/null \
+    | sort -nr \
+    | head -15 \
+    | awk '
+      {
+        size=$1
+        $1=""
+        file=substr($0,2)
+
+        split("B KB MB GB TB",u)
+        i=1
+
+        while(size>1024 && i<5){
+          size/=1024
+          i++
+        }
+
+        printf "%.2f %s\t%s\n", size,u[i],file
+      }'
+
+  echo "\n===== OLLAMA MODELS ====="
+  ollama list 2>/dev/null
+}
+
 decrypt() {
   local dir="$DECRYPT_FOLDER"
 
