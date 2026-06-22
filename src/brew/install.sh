@@ -20,6 +20,7 @@ brewInstall heroku
 brewInstall pyenv
 brewInstall ollama
 brewInstall libpq
+brewInstall bundletool
 brewInstall gemini-cli
 
 brewInstall font-fira-code-nerd-font
