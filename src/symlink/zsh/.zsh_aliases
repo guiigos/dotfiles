@@ -40,6 +40,10 @@ alias clean-dsstore="find . -type f -name '*.DS_Store' -ls -delete"
 alias list-venvs="find ~ -maxdepth 4 -type d \( -name ".venv" -o -name "venv" \) -print 2>/dev/null"
 alias list-node-modules="find ~ -type d -name "node_modules" -prune -print 2>/dev/null | head"
 
+# brightness
+alias key-on="mac-brightnessctl 1"
+alias key-off="mac-brightnessctl 0"
+
 doctor() {
   eval "brew doctor"
   echo
@@ -182,7 +186,7 @@ help() {
   case "$category" in
     all)
       printf "\nCOMMAND HELP\n"
-      printf "Use: help [system|navigation|listing|cleaning|search|functions]\n"
+      printf "Use: help [system|navigation|listing|cleaning|search|brightness|functions]\n"
 
       printf "\nSYSTEM\n"
       printf "  %-18s %s\n" "showdesktop" "show desktop icons"
@@ -223,6 +227,10 @@ help() {
       printf "\nSEARCH\n"
       printf "  %-18s %s\n" "list-venvs" "find virtual environments under home"
       printf "  %-18s %s\n" "list-node-modules" "find node_modules directories under home"
+
+      printf "\nBRIGHTNESS\n"
+      printf "  %-18s %s\n" "key-on" "turn keyboard brightness on"
+      printf "  %-18s %s\n" "key-off" "turn keyboard brightness off"
 
       printf "\nFUNCTIONS\n"
       printf "  %-18s %s\n" "doctor" "run quick environment health checks"
@@ -266,6 +274,7 @@ help() {
       printf "\nCLEANING\n"
       printf "  %-18s %s\n" "clean-cache" "remove macOS cache files"
       printf "  %-18s %s\n" "clean-logs" "remove macOS log files"
+      printf "  %-18s %s\n" "clean-huggingface" "remove Hugging Face cache"
       printf "  %-18s %s\n" "clean-pip" "clear pip cache"
       printf "  %-18s %s\n" "clean-npm" "clear npm cache"
       printf "  %-18s %s\n" "clean-brew" "clean Homebrew cache and old versions"
@@ -279,6 +288,12 @@ help() {
       printf "  %-18s %s\n" "list-node-modules" "find node_modules directories under home"
       ;;
 
+    brightness)
+      printf "\nBRIGHTNESS\n"
+      printf "  %-18s %s\n" "key-on" "turn keyboard brightness on"
+      printf "  %-18s %s\n" "key-off" "turn keyboard brightness off"
+      ;;
+
     functions)
       printf "\nFUNCTIONS\n"
       printf "  %-18s %s\n" "doctor" "run quick environment health checks"
@@ -288,7 +303,7 @@ help() {
 
     *)
       printf "Unknown category: %s\n" "$category"
-      printf "Use: help [system|navigation|listing|cleaning|search|functions]\n"
+      printf "Use: help [system|navigation|listing|cleaning|search|brightness|functions]\n"
       return 1
       ;;
   esac

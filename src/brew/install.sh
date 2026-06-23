@@ -8,6 +8,9 @@ echo
 echo
 brew update
 
+brew tap rakalex/mac-brightnessctl
+brew trust rakalex/mac-brightnessctl
+
 echo
 brewInstall gh
 brewInstall glab
@@ -22,6 +25,7 @@ brewInstall ollama
 brewInstall libpq
 brewInstall bundletool
 brewInstall gemini-cli
+brewInstall mac-brightnessctl
 
 brewInstall font-fira-code-nerd-font
 
