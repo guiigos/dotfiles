@@ -23,6 +23,7 @@ brewInstall heroku
 brewInstall pyenv
 brewInstall ollama
 brewInstall libpq
+brewInstall yt-dlp
 brewInstall bundletool
 brewInstall gemini-cli
 brewInstall mac-brightnessctl
